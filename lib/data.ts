@@ -183,7 +183,18 @@ export const productions: Production[] = [
       "/images/galleries/jerusalem/jerusalem-27.jpg",
       "/images/galleries/jerusalem/jerusalem-28.jpg",
       "/images/galleries/jerusalem/jerusalem-29.jpg",
-      "/images/galleries/jerusalem/jerusalem-30.jpg"
+      "/images/galleries/jerusalem/jerusalem-30.jpg",
+      "/images/galleries/jerusalem/jerusalem-31.jpg",
+      "/images/galleries/jerusalem/jerusalem-32.jpg",
+      "/images/galleries/jerusalem/jerusalem-33.jpg",
+      "/images/galleries/jerusalem/jerusalem-34.jpg",
+      "/images/galleries/jerusalem/jerusalem-35.jpg",
+      "/images/galleries/jerusalem/jerusalem-36.jpg",
+      "/images/galleries/jerusalem/jerusalem-37.jpg",
+      "/images/galleries/jerusalem/jerusalem-38.jpg",
+      "/images/galleries/jerusalem/jerusalem-39.jpg",
+      "/images/galleries/jerusalem/jerusalem-40.jpg",
+      "/images/galleries/jerusalem/jerusalem-41.jpg"
     ],
     awards: [
       "2018 Dora Mavor Moore Award - Outstanding Production",
