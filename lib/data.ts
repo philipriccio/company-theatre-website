@@ -610,7 +610,12 @@ export const productions: Production[] = [
     ],
     images: [
       "/images/a-whistle-in-the-dark-1.jpg",
-      "/images/galleries/whistle/whistle-01.jpg"
+      "/images/galleries/whistle/whistle-01.jpg",
+      "/images/galleries/whistle/whistle-02.jpg",
+      "/images/galleries/whistle/whistle-03.jpg",
+      "/images/galleries/whistle/whistle-04.jpg",
+      "/images/galleries/whistle/whistle-05.jpg",
+      "/images/galleries/whistle/whistle-06.jpg"
     ],
     awards: [
       "2005 Dora Mavor Moore Award - Outstanding Production (Nominated)"
