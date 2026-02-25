@@ -7,13 +7,29 @@ export default function ClientScripts() {
     // Color logo scroll animation
     const logo = document.getElementById("color-logo");
     if (logo) {
+      let hasBounced = false;
+      
       const handleScroll = () => {
         const scrollY = window.scrollY;
-        const maxScroll = 400;
+        const maxScroll = 350;
         const progress = Math.min(scrollY / maxScroll, 1);
-        const scale = 0.9 + progress * 0.1;
-        const opacity = 0.7 + progress * 0.3;
-        logo.style.transform = `scale(${scale})`;
+        const scale = 0.75 + progress * 0.3;
+        const opacity = 0.5 + progress * 0.5;
+        
+        if (progress >= 1 && !hasBounced) {
+          hasBounced = true;
+          logo.style.transition = "transform 0.15s ease-out";
+          logo.style.transform = "scale(1.12)";
+          setTimeout(() => {
+            logo.style.transition = "transform 0.2s ease-in-out";
+            logo.style.transform = "scale(1.05)";
+          }, 150);
+        } else if (progress < 1) {
+          hasBounced = false;
+          logo.style.transition = "none";
+          logo.style.transform = `scale(${scale})`;
+        }
+        
         logo.style.opacity = String(opacity);
       };
       

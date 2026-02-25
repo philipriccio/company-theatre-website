@@ -1,14 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Calendar, MapPin, Mail, Instagram, Twitter, Facebook, Youtube } from "lucide-react";
-import { productions, theatreInfo } from "@/lib/data";
+import { ArrowRight, Calendar, MapPin, Mail, Instagram, Twitter, Facebook, Youtube, User } from "lucide-react";
+import { productions, theatreInfo, founders } from "@/lib/data";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AnimatedQuotes from "@/components/AnimatedQuotes";
+import NewsletterSignup from "@/components/NewsletterSignup";
+import ClientScripts from "@/components/ClientScripts";
 
 export default function Home() {
   return (
     <main>
+      <ClientScripts />
       <Navigation />
 
       {/* Animated Quotes Hero Section with Background Slideshow */}
@@ -23,24 +26,24 @@ export default function Home() {
             <p className="text-accent font-bold uppercase tracking-[0.2em] text-sm mb-4">Radically Live Theatre</p>
           </div>
           <div className="max-w-3xl mx-auto text-center">
-            <div className="mb-6 flex justify-center">
+            <div className="mb-8 flex justify-center">
               <Image 
                 src="/images/logo-white-large.png" 
                 alt="The Company Theatre" 
-                width={400} 
-                height={128} 
-                className="h-24 md:h-32 w-auto transition-all duration-1000" 
+                width={500} 
+                height={160} 
+                className="h-36 md:h-48 w-auto brightness-110 contrast-110" 
                 id="color-logo" 
               />
             </div>
-            <p className="body-lg text-white/80 mb-8">
-              The Company Theatre produces provocative international plays with Canada&apos;s best actors. 
-              Founded in 2004, we create theatre magic with authentic text-based performances that bring you 
-              the drama in real time.
-            </p>
+            <div className="text-xl md:text-3xl text-white font-black uppercase tracking-tight leading-tight mb-10 space-y-2 brightness-110">
+              <p>Twenty years of fearless theatre.</p>
+              <p>World-class actors.</p>
+              <p>Stories that stay with you.</p>
+            </div>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link href="#about" className="btn-secondary border-white text-white hover:bg-white hover:text-black">
-                About Us
+                Our Story
                 <ArrowRight size={18} />
               </Link>
             </div>
@@ -54,16 +57,20 @@ export default function Home() {
           <div className="max-w-3xl mx-auto text-center py-16">
             <span className="status-badge">Coming Soon</span>
             <h2 className="heading-xl mb-6 mt-8">Our Next Production</h2>
-            <p className="body-lg text-gray-700 mb-8">
-              Something extraordinary is in the works. We&apos;re preparing our next provocative international production with Canada&apos;s best actors.
+            <p className="body-lg text-gray-700 mb-12">
+              Something extraordinary is in the works.<br />
+              We&apos;re preparing our most ambitious production yet<br />
+              with some of Canada&apos;s best actors.
             </p>
-            <p className="body-md text-gray-600 mb-8">
-              Stay tuned for the announcement. Sign up for our newsletter to be the first to know.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Link href="#contact" className="btn-primary">
-                Stay Updated
-              </Link>
+            <div className="bg-black rounded-2xl p-10 md:p-14">
+              <h3 className="text-white text-2xl md:text-3xl font-bold uppercase tracking-wide mb-3">
+                Don&apos;t Miss It
+              </h3>
+              <p className="text-white/70 text-lg mb-8">
+                Be the first to know<br />
+                when we announce our next production.
+              </p>
+              <NewsletterSignup />
             </div>
           </div>
         </div>
@@ -126,11 +133,12 @@ export default function Home() {
       <section id="about" className="section-padding bg-black text-white">
         <div className="container-main">
           <div className="max-w-4xl mx-auto text-center">
-            <span className="body-sm text-white/60 mb-4 block">About Company</span>
-            <h2 className="heading-xl mb-8">
+            <span className="body-sm text-white/60 mb-4 block">About Us</span>
+            <h2 className="heading-xl mb-4">
               RADICALLY LIVE.
             </h2>
-            <div className="space-y-6 body-lg text-white/80">
+            <p className="text-accent uppercase tracking-widest text-sm font-semibold mb-10">Since 2004</p>
+            <div className="space-y-6 body-lg text-white/80 text-left md:text-center">
               <p>
                 {theatreInfo.about.whoWeAre}
               </p>
@@ -141,13 +149,18 @@ export default function Home() {
                 {theatreInfo.about.approach}
               </p>
             </div>
-            <div className="mt-12 flex flex-wrap gap-8 justify-center">
+            <div className="mt-12 pt-10 border-t border-white/20">
+              <p className="text-white/60 italic text-lg">
+                {theatreInfo.about.stats}
+              </p>
+            </div>
+            <div className="mt-12 flex flex-wrap gap-10 justify-center">
               <div>
-                <span className="heading-xl text-accent">{productions.length + 1}</span>
+                <span className="heading-xl text-accent">13</span>
                 <p className="body-sm text-white/60 mt-1">Productions</p>
               </div>
               <div>
-                <span className="heading-xl text-accent">20+</span>
+                <span className="heading-xl text-accent">20</span>
                 <p className="body-sm text-white/60 mt-1">Years</p>
               </div>
               <div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Info, User } from "lucide-react";
 import { CastMember, CrewMember } from "@/lib/data";
 import Modal from "./Modal";
@@ -52,11 +53,20 @@ export default function CastCreativesTabs({ cast, crew }: CastCreativesTabsProps
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {cast.map((member, index) => (
               <div key={index} className="group">
-                {/* Headshot placeholder */}
+                {/* Headshot */}
                 <div className="aspect-square bg-gray-100 mb-3 relative overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <User size={48} className="text-gray-300" />
-                  </div>
+                  {member.headshot ? (
+                    <Image
+                      src={member.headshot}
+                      alt={member.actor}
+                      fill
+                      className="object-cover object-top"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <User size={48} className="text-gray-300" />
+                    </div>
+                  )}
                   <button
                     onClick={() => handlePersonClick(member.actor, member.role || "Cast", member.bio)}
                     className="absolute bottom-2 right-2 w-8 h-8 bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-md hover:bg-black hover:text-white"
@@ -72,20 +82,23 @@ export default function CastCreativesTabs({ cast, crew }: CastCreativesTabsProps
             ))}
           </div>
         ) : (
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {crew.map((member, index) => (
               <div key={index} className="group">
-                <div className="flex items-start justify-between">
+                {/* Creatives: names and roles only, no headshots */}
+                <div className="flex items-start justify-between py-2">
                   <div>
                     <h4 className="font-bold text-sm leading-tight">{member.name}</h4>
                     <p className="text-xs text-gray-500 mt-1 uppercase tracking-wide">{member.role}</p>
                   </div>
-                  <button
-                    onClick={() => handlePersonClick(member.name, member.role, member.bio)}
-                    className="w-8 h-8 border border-gray-200 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black hover:text-white hover:border-black"
-                  >
-                    <Info size={14} />
-                  </button>
+                  {member.bio && (
+                    <button
+                      onClick={() => handlePersonClick(member.name, member.role, member.bio)}
+                      className="w-8 h-8 border border-gray-200 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black hover:text-white hover:border-black"
+                    >
+                      <Info size={14} />
+                    </button>
+                  )}
                 </div>
               </div>
             ))}

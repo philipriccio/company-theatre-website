@@ -5,64 +5,78 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
 interface Quote {
-  text: string;
+  lines: string[];  // Pre-broken into logical lines for clean wrapping
   source: string;
 }
 
 const quotes: Quote[] = [
   {
-    text: "ONE OF THE BEST PLAYS I'VE EVER SEEN",
-    source: "Steve Paikin, TVO"
+    lines: ["ONE OF THE BEST THINGS", "EVER SEEN IN TORONTO"],
+    source: "The National Post"
   },
   {
-    text: "MUST SEE THEATRE. A MASTERCLASS IN ACTING",
-    source: "Rick Mercer"
+    lines: ["A MASTERPIECE."],
+    source: "The National Post"
   },
   {
-    text: "UNIQUE. COMPLEX. BRILLIANT",
-    source: "The Arts Guild"
+    lines: ["AN ABSOLUTELY", "SHATTERING EXPERIENCE"],
+    source: "Eye Weekly"
   },
   {
-    text: "PAUL GROSS' BEST STAGE WORK TO DATE",
+    lines: ["PURE THEATRE OF THE KIND", "WE RARELY SEE"],
+    source: "The Globe & Mail"
+  },
+  {
+    lines: ["THE MOST STUNNING DEBUT", "SINCE SOULPEPPER"],
     source: "Robert Cushman, National Post"
   },
   {
-    text: "THE WOMEN WHO KILL IN THIS THRILLER",
-    source: "J. Kelly Nestruck, The Globe and Mail"
+    lines: ["A DISTURBING, WHITE-KNUCKLE", "NIGHT AT THE THEATRE"],
+    source: "Glenn Sumi, NOW"
+  },
+  {
+    lines: ["SO TRUTHFUL, SO VIVID,", "IT IS SIMPLY BREATHTAKING"],
+    source: "Christopher Hoile, Eye Weekly"
+  },
+  {
+    lines: ["A RELIGIOUS EXPERIENCE"],
+    source: "The Globe & Mail"
+  },
+  {
+    lines: ["THE MOST MUSCULAR PIECE OF THEATRE", "WE'VE SEEN IN TORONTO IN SOME TIME"],
+    source: "Richard Ouzounian, Toronto Star"
+  },
+  {
+    lines: ["GLOWS WITH", "RICH HUMANITY"],
+    source: "Jon Kaplan, NOW"
   }
 ];
 
-// All production photos for the hero slideshow - pulling from ALL past production galleries
+// All production photos for the hero slideshow - spread out same-show images
 const slideshowImages = [
-  // Production photos (newer production shots)
   { src: "/images/jerusalem-production-1.jpg", alt: "Jerusalem Production" },
-  { src: "/images/jerusalem-production-2.jpg", alt: "Jerusalem Production" },
   { src: "/images/things-production-1.jpg", alt: "Things I Know to be True Production" },
   { src: "/images/john-production-1.jpg", alt: "John Production" },
-  { src: "/images/festen-production-1.jpg", alt: "Festen Production" },
+  { src: "/images/jerusalem-production-2.jpg", alt: "Jerusalem Production" },
   { src: "/images/belleville-production-1.jpg", alt: "Belleville Production" },
+  { src: "/images/things-i-know-to-be-true/tiktbt-14.jpg", alt: "Things I Know to be True Production" },
+  { src: "/images/galleries/jerusalem/jerusalem-28.jpg", alt: "Jerusalem Production" },
   { src: "/images/through-the-leaves-production-1.jpg", alt: "Through the Leaves Production" },
-  { src: "/images/about-production.jpg", alt: "Company Theatre Production" },
-  { src: "/images/support-production.jpg", alt: "Company Theatre Production" },
-  // Hero images from productions
-  { src: "/images/things-i-know-to-be-true-hero.jpg", alt: "Things I Know to be True" },
-  { src: "/images/through-the-leaves-hero.jpg", alt: "Through the Leaves" },
-  // Original production promotional images
-  { src: "/images/jerusalem-1.jpg", alt: "Jerusalem" },
   { src: "/images/john-1.jpg", alt: "John" },
+  { src: "/images/things-i-know-to-be-true-hero.jpg", alt: "Things I Know to be True" },
   { src: "/images/domesticated-1.jpg", alt: "Domesticated" },
-  { src: "/images/domesticated-2.jpg", alt: "Domesticated" },
+  { src: "/images/galleries/john/john-05.jpg", alt: "John Production" },
+  { src: "/images/galleries/whistle/whistle-05.jpg", alt: "A Whistle in the Dark Production" },
   { src: "/images/seagull-1.jpg", alt: "The Seagull" },
-  { src: "/images/seagull-2.jpg", alt: "The Seagull" },
+  { src: "/images/galleries/jerusalem/jerusalem-36.jpg", alt: "Jerusalem Production" },
+  { src: "/images/things-i-know-to-be-true/tiktbt-15.jpg", alt: "Things I Know to be True Production" },
   { src: "/images/belleville-1.jpg", alt: "Belleville" },
-  { src: "/images/belleville-2.jpg", alt: "Belleville" },
-  { src: "/images/speaking-in-tongues-1.jpg", alt: "Speaking in Tongues" },
-  { src: "/images/speaking-in-tongues-2.jpg", alt: "Speaking in Tongues" },
-  { src: "/images/festen-1.jpg", alt: "Festen" },
-  { src: "/images/marion-bridge-1.jpg", alt: "Marion Bridge" },
+  { src: "/images/galleries/john/john-32.jpg", alt: "John Production" },
+  { src: "/images/through-the-leaves-hero.jpg", alt: "Through the Leaves" },
   { src: "/images/the-test-1.jpg", alt: "The Test" },
-  { src: "/images/through-the-leaves-1.jpg", alt: "Through the Leaves" },
-  { src: "/images/a-whistle-in-the-dark-1.jpg", alt: "A Whistle in the Dark" }
+  { src: "/images/things-i-know-to-be-true/tiktbt-01.jpg", alt: "Things I Know to be True Production" },
+  { src: "/images/a-whistle-in-the-dark-1.jpg", alt: "A Whistle in the Dark" },
+  { src: "/images/things-i-know-to-be-true/tiktbt-06.jpg", alt: "Things I Know to be True Production" }
 ];
 
 // Generate random position for scattered letters
@@ -108,8 +122,8 @@ const AnimatedLetter = ({ char, index, totalLetters, isScattered }: LetterProps)
         opacity: targetOpacity
       }}
       transition={{
-        duration: 0.8,
-        delay: isScattered ? index * 0.02 : index * 0.03,
+        duration: 0.6,
+        delay: isScattered ? index * 0.015 : index * 0.02,
         ease: [0.25, 0.46, 0.45, 0.94]
       }}
       style={{ 
@@ -128,17 +142,18 @@ export default function AnimatedQuotes() {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
   const currentQuote = quotes[currentQuoteIndex];
-  const letters = currentQuote.text.split("");
+  // Flatten all letters with their line info for continuous animation timing
+  const linesWithLetters = currentQuote.lines.map(line => line.split(""));
 
   const nextQuote = useCallback(() => {
     setCurrentQuoteIndex((prev) => (prev + 1) % quotes.length);
   }, []);
 
-  // Slideshow effect - rotate every 6 seconds
+  // Slideshow effect - rotate every 3.5 seconds for more energy
   useEffect(() => {
     const slideInterval = setInterval(() => {
       setCurrentSlideIndex((prev) => (prev + 1) % slideshowImages.length);
-    }, 6000);
+    }, 3500);
     return () => clearInterval(slideInterval);
   }, []);
 
@@ -150,29 +165,29 @@ export default function AnimatedQuotes() {
         // Letters are scattered, start forming after brief pause
         timeout = setTimeout(() => {
           setPhase("forming");
-        }, 200);
+        }, 150);
         break;
       
       case "forming":
-        // Letters forming into quote
+        // Letters forming into quote - faster animation
         timeout = setTimeout(() => {
           setPhase("displaying");
-        }, 1200);
+        }, 900);
         break;
       
       case "displaying":
-        // Quote displayed, hold for reading
+        // Quote displayed, hold for reading - faster for more energy
         timeout = setTimeout(() => {
           setPhase("exiting");
-        }, 3500);
+        }, 2500);
         break;
       
       case "exiting":
-        // Letters scatter away
+        // Letters scatter away - faster exit
         timeout = setTimeout(() => {
           nextQuote();
           setPhase("scattered");
-        }, 800);
+        }, 600);
         break;
     }
 
@@ -186,7 +201,7 @@ export default function AnimatedQuotes() {
         {slideshowImages.map((image, index) => (
           <div
             key={index}
-            className="absolute inset-0 transition-opacity duration-2000"
+            className="absolute inset-0 transition-opacity duration-1000"
             style={{ opacity: index === currentSlideIndex ? 1 : 0 }}
           >
             <Image
@@ -216,7 +231,7 @@ export default function AnimatedQuotes() {
               transition={{ duration: 0.3 }}
             >
               <h2 
-                className="text-white font-bold uppercase leading-[0.9] tracking-tight drop-shadow-lg"
+                className="text-white font-bold uppercase leading-[1.1] tracking-tight drop-shadow-lg flex flex-col items-center"
                 style={{ 
                   fontFamily: "'Bebas Neue', 'Impact', 'Arial Narrow', sans-serif",
                   fontSize: "clamp(2rem, 8vw, 5.5rem)",
@@ -224,15 +239,26 @@ export default function AnimatedQuotes() {
                   textShadow: "0 4px 20px rgba(0,0,0,0.8)"
                 }}
               >
-                {letters.map((char, index) => (
-                  <AnimatedLetter
-                    key={`${currentQuoteIndex}-${index}`}
-                    char={char}
-                    index={index}
-                    totalLetters={letters.length}
-                    isScattered={phase === "scattered" || phase === "exiting"}
-                  />
-                ))}
+                {(() => {
+                  let letterIndex = 0;
+                  const totalLetters = linesWithLetters.flat().length;
+                  return linesWithLetters.map((lineLetters, lineIdx) => (
+                    <span key={`line-${lineIdx}`} className="block whitespace-nowrap">
+                      {lineLetters.map((char) => {
+                        const idx = letterIndex++;
+                        return (
+                          <AnimatedLetter
+                            key={`${currentQuoteIndex}-${idx}`}
+                            char={char}
+                            index={idx}
+                            totalLetters={totalLetters}
+                            isScattered={phase === "scattered" || phase === "exiting"}
+                          />
+                        );
+                      })}
+                    </span>
+                  ));
+                })()}
               </h2>
             </motion.div>
           </AnimatePresence>

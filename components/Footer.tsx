@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Instagram, Twitter, Facebook, Youtube, Mail } from "lucide-react";
 import { theatreInfo } from "@/lib/data";
+import NewsletterSignup from "./NewsletterSignup";
 
 export default function Footer() {
   return (
@@ -78,6 +79,19 @@ export default function Footer() {
               </p>
               <p className="pt-2 text-sm">{theatreInfo.location}</p>
             </address>
+          </div>
+        </div>
+        
+        {/* Newsletter Signup */}
+        <div className="py-12 border-t border-white/20">
+          <div className="max-w-2xl mx-auto text-center">
+            <h3 className="text-2xl md:text-3xl font-bold uppercase tracking-wide mb-3 text-white">
+              Keep in Touch
+            </h3>
+            <p className="text-white/60 mb-8">
+              Join our mailing list for news, updates, and exclusive invitations.
+            </p>
+            <NewsletterSignup compact />
           </div>
         </div>
         

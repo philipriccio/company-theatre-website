@@ -68,13 +68,13 @@ export default async function ShowPage({ params }: ShowPageProps) {
         </div>
 
         {/* Hero Image */}
-        <div className="relative h-[50vh] md:h-[60vh]">
+        <div className="relative h-[65vh] md:h-[80vh]">
           {hasImages ? (
             <Image
               src={production.images[0]}
               alt={production.title}
               fill
-              className="object-cover"
+              className="object-cover object-top"
               priority
             />
           ) : (

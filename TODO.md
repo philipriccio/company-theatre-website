@@ -14,7 +14,13 @@
   - The Test: 7 photos
   - Festen: 2 photos
   - Whistle in the Dark: 1 photo
+- [x] **Founders section** — added to About page with headshots ✅ (Feb 20)
+  - Philip Riccio headshot: ✅ exists
+  - Allan Hawco headshot: ❌ NEEDED (placeholder showing)
 - [ ] **Actor headshots** — add to past production pages
+  - Philip Riccio: ✅ added to all his cast/crew appearances
+  - Allan Hawco: data prepared, but image file needed at `/public/images/cast/allan-hawco.jpg`
+  - Other actors: not started (larger undertaking)
 - [ ] **Jackpot Twins page** — create (hidden until March 31)
 
 ## Technical
@@ -39,7 +45,8 @@
 - [ ] Final website copy / text revisions
 - [ ] Real review quotes (for hero section)
 - [x] Past production photos (for galleries) ✅
-- [ ] Actor headshots (for past shows)
+- [ ] **Allan Hawco headshot** — needed for Founders section & past shows (save to `/public/images/cast/allan-hawco.jpg`)
+- [ ] Actor headshots (for other cast members)
 - [ ] Jackpot Twins content (for announcement page)
 - [x] Keela export / mailing list access ✅
 
@@ -55,4 +62,4 @@
 
 ---
 
-*Last updated: Feb 17, 2026*
+*Last updated: Feb 20, 2026*
