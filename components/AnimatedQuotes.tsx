@@ -49,6 +49,22 @@ const quotes: Quote[] = [
   {
     lines: ["GLOWS WITH", "RICH HUMANITY"],
     source: "Jon Kaplan, NOW"
+  },
+  {
+    lines: ["A PLAY THAT, LIKE THE COMPANY,", "ONLY COMES AROUND ONCE IN A WHILE"],
+    source: "Torontoist"
+  },
+  {
+    lines: ["MUSCULAR! DARKLY FUNNY!", "LIKE WATCHING AN EARTHQUAKE IN SLOW MOTION!"],
+    source: "The Globe & Mail"
+  },
+  {
+    lines: ["EXTRAORDINARY! UNSETTLING!", "THE ENTIRE CAST IS ON RED ALERT!"],
+    source: "The National Post"
+  },
+  {
+    lines: ["SNAPPY, SLICK PRODUCTION,", "DIRECTED WITH PANACHE"],
+    source: "Toronto Star"
   }
 ];
 
@@ -60,15 +76,15 @@ const slideshowImages = [
   { src: "/images/show-jerusalem-039.jpg", alt: "Jerusalem Production" },
   { src: "/images/show-belleville-007.jpg", alt: "Belleville Production" },
   { src: "/images/show-tiktbt-017.jpg", alt: "Things I Know to be True Production" },
-  { src: "/images/show-jerusalem-025.jpg", alt: "Jerusalem Production" },
   { src: "/images/show-through-the-leaves-003.jpg", alt: "Through the Leaves Production" },
   { src: "/images/show-john-001.jpg", alt: "John" },
   { src: "/images/show-tiktbt-002.jpg", alt: "Things I Know to be True" },
   { src: "/images/show-domesticated-001.jpg", alt: "Domesticated" },
-  { src: "/images/show-john-007.jpg", alt: "John Production" },
   { src: "/images/show-whistle-007.jpg", alt: "A Whistle in the Dark Production" },
   { src: "/images/show-seagull-001.jpg", alt: "The Seagull" },
   { src: "/images/show-jerusalem-032.jpg", alt: "Jerusalem Production" },
+  { src: "/images/show-jerusalem-023.jpg", alt: "Jerusalem Production" },
+  { src: "/images/show-jerusalem-030.jpg", alt: "Jerusalem Production" },
   { src: "/images/show-tiktbt-018.jpg", alt: "Things I Know to be True Production" },
   { src: "/images/show-belleville-001.jpg", alt: "Belleville" },
   { src: "/images/show-john-034.jpg", alt: "John Production" },

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Calendar, MapPin, Mail, Instagram, Twitter, Facebook, Youtube, User } from "lucide-react";
-import { productions, theatreInfo, founders } from "@/lib/data";
+import { productions, theatreInfo } from "@/lib/data";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AnimatedQuotes from "@/components/AnimatedQuotes";
@@ -133,11 +133,9 @@ export default function Home() {
       <section id="about" className="section-padding bg-black text-white">
         <div className="container-main">
           <div className="max-w-4xl mx-auto text-center">
-            <span className="body-sm text-white/60 mb-4 block">About Us</span>
-            <h2 className="heading-xl mb-4">
+            <h2 className="heading-xl mb-10">
               RADICALLY LIVE.
             </h2>
-            <p className="text-accent uppercase tracking-widest text-sm font-semibold mb-10">Since 2004</p>
             <div className="space-y-6 body-lg text-white/80 text-left md:text-center">
               <p>
                 {theatreInfo.about.whoWeAre}

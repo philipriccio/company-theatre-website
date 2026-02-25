@@ -1,34 +1,11 @@
 // Production data from scraped manifest
 
-// Founders of The Company Theatre
-export interface Founder {
-  name: string;
-  role: string;
-  bio: string;
-  headshot?: string;
-}
-
-export const founders: Founder[] = [
-  {
-    name: "Philip Riccio",
-    role: "Co-Founder & Artistic Director",
-    bio: "Philip Riccio co-founded The Company Theatre in 2004 with Allan Hawco. As Artistic Director, he has directed many of the company's most acclaimed productions and performed in numerous others. His work has earned multiple Dora Mavor Moore Awards and Toronto Theatre Critics Awards. Philip continues to lead the company's mission of bringing world-class, radically live theatre to Canadian audiences.",
-    headshot: "/images/cast/cast-046-philip-riccio.jpg"
-  },
-  {
-    name: "Allan Hawco",
-    role: "Co-Founder & Co-Artistic Director",
-    bio: "Allan Hawco co-founded The Company Theatre in 2004 with Philip Riccio. A versatile actor known for both stage and screen, Allan has appeared in productions including Belleville, Festen, and the company's debut production A Whistle in the Dark. He is also known for creating and starring in the hit CBC series Republic of Doyle.",
-    headshot: "/images/cast/cast-005-allan-hawco.jpg"
-  }
-];
-
 export const theatreInfo = {
   name: "The Company Theatre",
   tagline: "Radically Live Theatre",
   heroBlurb: "Twenty years of fearless theatre. World-class actors. Stories that stay with you.",
   description: "Provocative international plays with Canada's finest actors.",
-  founded: 2004,
+  founded: 2005,
   location: "Toronto, Canada",
   logo: "/images/logo-main.png",
   contact: {
@@ -43,7 +20,7 @@ export const theatreInfo = {
     }
   },
   about: {
-    whoWeAre: "Since 2004, The Company Theatre has been bringing bold, uncompromising stories to Toronto stages. We hunt down the most electrifying plays from around the world and put them in the hands of Canada's finest actors.",
+    whoWeAre: "Since 2005, The Company Theatre has been bringing bold, uncompromising stories to Toronto stages. We hunt down the most electrifying plays from around the world and put them in the hands of Canada's finest actors.",
     mission: "No gimmicks. No safety nets. Just raw, authentic performances that unfold differently every single night. When the lights come up, anything can happen—and that's exactly the point.",
     approach: "Think of it as prestige television, but live and breathing in front of you. We're drawn to stories that dig into the messy, complicated, thrilling parts of being human. The kind of nights that stay with you long after you leave the theatre.",
     stats: "13 productions. 15+ awards. Two decades of theatre that critics have called 'one of the best things ever seen in Toronto.'",
