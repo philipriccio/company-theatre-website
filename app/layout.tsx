@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { theatreInfo } from "@/lib/data";
 import ClientScripts from "@/components/ClientScripts";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 export const metadata: Metadata = {
   title: `${theatreInfo.name} | ${theatreInfo.tagline}`,
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body>
         {children}
         <ClientScripts />
+        <GoogleAnalytics />
       </body>
     </html>
   );

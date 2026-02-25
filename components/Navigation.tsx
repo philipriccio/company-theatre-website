@@ -17,7 +17,7 @@ export default function Navigation() {
         {/* Logo - B&W */}
         <Link href="/" className="flex flex-col items-center" onClick={closeMenu}>
           <Image 
-            src="/images/logo.png" 
+            src="/images/logo-main.png" 
             alt="Company Theatre" 
             width={120} 
             height={32} 
