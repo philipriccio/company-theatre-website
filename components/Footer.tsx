@@ -100,10 +100,6 @@ export default function Footer() {
           <p className="body-sm text-white/50">
             © {new Date().getFullYear()} {theatreInfo.name}. All rights reserved.
           </p>
-          <div className="flex gap-6">
-            <a href="#" className="footer-link text-sm text-white/50 hover:text-white">Privacy Policy</a>
-            <a href="#" className="footer-link text-sm text-white/50 hover:text-white">Terms of Use</a>
-          </div>
         </div>
       </div>
     </footer>
