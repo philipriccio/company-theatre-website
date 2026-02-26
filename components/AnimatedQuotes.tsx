@@ -70,11 +70,11 @@ const quotes: Quote[] = [
 
 // All production photos for the hero slideshow - spread out same-show images
 const slideshowImages = [
-  { src: "/images/show-jerusalem-038.jpg", alt: "Jerusalem Production" },
-  { src: "/images/show-tiktbt-003.jpg", alt: "Things I Know to be True Production" },
-  { src: "/images/show-john-002.jpg", alt: "John Production" },
-  { src: "/images/show-jerusalem-039.jpg", alt: "Jerusalem Production" },
-  { src: "/images/show-belleville-007.jpg", alt: "Belleville Production" },
+  { src: "/images/show-jerusalem-038.jpg", alt: "Jerusalem Production", blur: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAFAAoDAREAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAT/xAAYEAADAQEAAAAAAAAAAAAAAAAAAQIRIf/EABQBAQAAAAAAAAAAAAAAAAAAAAH/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAwDAQACEQMRAD8AjVZHEENAL//Z" },
+  { src: "/images/show-tiktbt-003.jpg", alt: "Things I Know to be True Production", blur: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAHAAoDAREAAhEBAxEB/8QAFAABAAAAAAAAAAAAAAAAAAAAAf/EABkQAQACAwAAAAAAAAAAAAAAAAEAAgMTIf/EABUBAQEAAAAAAAAAAAAAAAAAAAIB/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AAzOuwQwqC/JIVf/2Q==" },
+  { src: "/images/show-john-002.jpg", alt: "John Production", blur: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAHAAoDAREAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAgT/xAAZEAADAAMAAAAAAAAAAAAAAAAAAQISQVH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAv/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AIqmYlLZKgxXAP/Z" },
+  { src: "/images/show-jerusalem-039.jpg", alt: "Jerusalem Production", blur: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAHAAoDAREAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAwT/xAAYEAEAAwEAAAAAAAAAAAAAAAABAAIRE//EABYBAQEBAAAAAAAAAAAAAAAAAAIBA//EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oADAMBAAIRAxEAPwCfoWVgaUDTWUX/2Q==" },
+  { src: "/images/show-belleville-007.jpg", alt: "Belleville Production", blur: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAHAAoDAREAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAgT/xAAaEAEAAgMBAAAAAAAAAAAAAAABAAIDBBEx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/xAAXEQADAQAAAAAAAAAAAAAAAAAAAREh/9oADAMBAAIRAxEAPwCQxVaEPAlQOq99IpYf/9k=" },
   { src: "/images/show-tiktbt-017.jpg", alt: "Things I Know to be True Production" },
   { src: "/images/show-through-the-leaves-003.jpg", alt: "Through the Leaves Production" },
   { src: "/images/show-john-001.jpg", alt: "John" },
@@ -225,7 +225,10 @@ export default function AnimatedQuotes() {
               alt={image.alt}
               fill
               className="object-cover animate-zoom object-top md:object-center"
-              priority={index === 0}
+              priority={index < 2}
+              placeholder={image.blur ? "blur" : "empty"}
+              blurDataURL={image.blur}
+              sizes="100vw"
             />
           </div>
         ))}
