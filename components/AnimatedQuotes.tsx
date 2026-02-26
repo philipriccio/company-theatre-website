@@ -43,7 +43,7 @@ const quotes: Quote[] = [
     source: "The Globe & Mail"
   },
   {
-    lines: ["THE MOST MUSCULAR", "PIECE OF THEATRE WE'VE SEEN", "IN TORONTO IN SOME TIME"],
+    lines: ["THE MOST MUSCULAR", "PIECE OF THEATRE", "WE'VE SEEN IN TORONTO", "IN SOME TIME"],
     source: "Richard Ouzounian, Toronto Star"
   },
   {
