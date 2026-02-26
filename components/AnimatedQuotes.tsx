@@ -104,16 +104,16 @@ const getRandomPosition = () => ({
   opacity: 0
 });
 
-interface LetterProps {
-  char: string;
+interface WordProps {
+  word: string;
   index: number;
-  totalLetters: number;
+  totalWords: number;
   isScattered: boolean;
 }
 
-const AnimatedLetter = ({ char, index, totalLetters, isScattered }: LetterProps) => {
+const AnimatedWord = ({ word, index, totalWords, isScattered }: WordProps) => {
   const [randomPos] = useState(() => getRandomPosition());
-  
+
   const targetX = isScattered ? randomPos.x : 0;
   const targetY = isScattered ? randomPos.y : 0;
   const targetRotate = isScattered ? randomPos.rotate : 0;
@@ -122,7 +122,7 @@ const AnimatedLetter = ({ char, index, totalLetters, isScattered }: LetterProps)
 
   return (
     <motion.span
-      className="inline-block"
+      className="inline-block whitespace-nowrap"
       initial={{
         x: randomPos.x,
         y: randomPos.y,
@@ -139,15 +139,14 @@ const AnimatedLetter = ({ char, index, totalLetters, isScattered }: LetterProps)
       }}
       transition={{
         duration: 0.6,
-        delay: isScattered ? index * 0.015 : index * 0.02,
+        delay: isScattered ? index * 0.03 : index * 0.04,
         ease: [0.25, 0.46, 0.45, 0.94]
       }}
-      style={{ 
-        willChange: "transform, opacity",
-        whiteSpace: char === " " ? "pre" : "normal"
+      style={{
+        willChange: "transform, opacity"
       }}
     >
-      {char === " " ? "\u00A0" : char}
+      {word}
     </motion.span>
   );
 };
@@ -158,8 +157,8 @@ export default function AnimatedQuotes() {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
   const currentQuote = quotes[currentQuoteIndex];
-  // Flatten all letters with their line info for continuous animation timing
-  const linesWithLetters = currentQuote.lines.map(line => line.split(""));
+  // Split lines into words for proper text wrapping
+  const linesWithWords = currentQuote.lines.map(line => line.split(" "));
 
   const nextQuote = useCallback(() => {
     setCurrentQuoteIndex((prev) => (prev + 1) % quotes.length);
@@ -249,9 +248,9 @@ export default function AnimatedQuotes() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
             >
-              <h2 
+              <h2
                 className="text-white font-bold uppercase leading-[1.1] tracking-tight drop-shadow-lg flex flex-col items-center"
-                style={{ 
+                style={{
                   fontFamily: "'Bebas Neue', 'Impact', 'Arial Narrow', sans-serif",
                   fontSize: "clamp(1.5rem, 6vw, 5.5rem)",
                   letterSpacing: "0.02em",
@@ -259,20 +258,32 @@ export default function AnimatedQuotes() {
                 }}
               >
                 {(() => {
-                  let letterIndex = 0;
-                  const totalLetters = linesWithLetters.flat().length;
-                  return linesWithLetters.map((lineLetters, lineIdx) => (
-                    <span key={`line-${lineIdx}`} className="block text-center px-2">
-                      {lineLetters.map((char) => {
-                        const idx = letterIndex++;
+                  let wordIndex = 0;
+                  const totalWords = linesWithWords.flat().length;
+                  return linesWithWords.map((lineWords, lineIdx) => (
+                    <span
+                      key={`line-${lineIdx}`}
+                      className="block text-center px-2"
+                      style={{
+                        wordWrap: "break-word",
+                        overflowWrap: "break-word",
+                        hyphens: "none"
+                      }}
+                    >
+                      {lineWords.map((word, wordIdx) => {
+                        const idx = wordIndex++;
                         return (
-                          <AnimatedLetter
-                            key={`${currentQuoteIndex}-${idx}`}
-                            char={char}
-                            index={idx}
-                            totalLetters={totalLetters}
-                            isScattered={phase === "scattered" || phase === "exiting"}
-                          />
+                          <span key={`${currentQuoteIndex}-${idx}`}>
+                            <AnimatedWord
+                              word={word}
+                              index={idx}
+                              totalWords={totalWords}
+                              isScattered={phase === "scattered" || phase === "exiting"}
+                            />
+                            {wordIdx < lineWords.length - 1 && (
+                              <span className="inline-block">&nbsp;</span>
+                            )}
+                          </span>
                         );
                       })}
                     </span>
