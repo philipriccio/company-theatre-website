@@ -137,7 +137,7 @@ export const productions: Production[] = [
       { role: "Mr. Parsons", actor: "Michael Spencer-Davis", headshot: "/images/cast/cast-037-michael-spencer-davis.jpg" },
       { role: "Troy Whitworth", actor: "Jason Cadieux", headshot: "/images/cast/cast-024-jason-cadieux.jpg" },
       { role: "The Professor", actor: "Nicholas Campbell", headshot: "/images/cast/cast-040-nicholas-campbell.jpg" },
-      { role: "Phaedra", actor: "Shakura Dickson" },
+      { role: "Phaedra", actor: "Shakura Dickson", headshot: "/images/cast/cast-061-shakura-dickson.jpg" },
       { role: "Davey", actor: "Peter Fernandes", headshot: "/images/cast/cast-045-peter-fernandes.jpg" },
       { role: "Wesley", actor: "Daniel Kash", headshot: "/images/cast/cast-012-daniel-kash.jpg" },
       { role: "Ms. Fawcett", actor: "Kieran Sequoia", headshot: "/images/cast/cast-029-kieran-sequoia.jpg" }
