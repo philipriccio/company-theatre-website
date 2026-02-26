@@ -30,6 +30,12 @@ The Company Theatre's public audience — theatregoers, press, industry professi
 - Production history imported
 - Basic pages built
 
+### Feb 26, 2026 — Quote Formatting Fix
+- Fixed responsive text wrapping issues in AnimatedQuotes component
+- Changed from letter-by-letter animation to word-by-word animation
+- Quotes now display correctly at all screen sizes (mobile, tablet, desktop)
+- Words wrap at word boundaries instead of breaking mid-word
+
 ## 🔧 Technical Stack
 - **Framework:** Next.js 16 + TypeScript + Tailwind CSS v4
 - **Hosting:** TBD (likely DigitalOcean via Coolify)
