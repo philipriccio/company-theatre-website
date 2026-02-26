@@ -123,7 +123,6 @@ const AnimatedWord = ({ word, index, totalWords, isScattered }: WordProps) => {
   return (
     <motion.span
       className="inline-block whitespace-nowrap"
-      style={{ wordBreak: "keep-all", overflowWrap: "normal" }}
       initial={{
         x: randomPos.x,
         y: randomPos.y,
@@ -144,7 +143,9 @@ const AnimatedWord = ({ word, index, totalWords, isScattered }: WordProps) => {
         ease: [0.25, 0.46, 0.45, 0.94]
       }}
       style={{
-        willChange: "transform, opacity"
+        willChange: "transform, opacity",
+        wordBreak: "keep-all",
+        overflowWrap: "normal"
       }}
     >
       {word}
