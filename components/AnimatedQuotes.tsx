@@ -104,14 +104,14 @@ const getRandomPosition = () => ({
   opacity: 0
 });
 
-interface WordProps {
-  word: string;
+interface LetterProps {
+  letter: string;
   index: number;
-  totalWords: number;
+  totalLetters: number;
   isScattered: boolean;
 }
 
-const AnimatedWord = ({ word, index, totalWords, isScattered }: WordProps) => {
+const AnimatedLetter = ({ letter, index, totalLetters, isScattered }: LetterProps) => {
   const [randomPos] = useState(() => getRandomPosition());
 
   const targetX = isScattered ? randomPos.x : 0;
@@ -120,9 +120,14 @@ const AnimatedWord = ({ word, index, totalWords, isScattered }: WordProps) => {
   const targetScale = isScattered ? randomPos.scale : 1;
   const targetOpacity = isScattered ? 0 : 1;
 
+  // Spaces don't animate
+  if (letter === " ") {
+    return <span className="inline-block">&nbsp;</span>;
+  }
+
   return (
     <motion.span
-      className="inline-block whitespace-nowrap"
+      className="inline-block"
       initial={{
         x: randomPos.x,
         y: randomPos.y,
@@ -139,16 +144,14 @@ const AnimatedWord = ({ word, index, totalWords, isScattered }: WordProps) => {
       }}
       transition={{
         duration: 0.6,
-        delay: isScattered ? index * 0.03 : index * 0.04,
+        delay: isScattered ? index * 0.015 : index * 0.02,
         ease: [0.25, 0.46, 0.45, 0.94]
       }}
       style={{
-        willChange: "transform, opacity",
-        wordBreak: "keep-all",
-        overflowWrap: "normal"
+        willChange: "transform, opacity"
       }}
     >
-      {word}
+      {letter}
     </motion.span>
   );
 };
@@ -159,8 +162,6 @@ export default function AnimatedQuotes() {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
   const currentQuote = quotes[currentQuoteIndex];
-  // Split lines into words for proper text wrapping
-  const linesWithWords = currentQuote.lines.map(line => line.split(" "));
 
   const nextQuote = useCallback(() => {
     setCurrentQuoteIndex((prev) => (prev + 1) % quotes.length);
@@ -260,9 +261,9 @@ export default function AnimatedQuotes() {
                 }}
               >
                 {(() => {
-                  let wordIndex = 0;
-                  const totalWords = linesWithWords.flat().length;
-                  return linesWithWords.map((lineWords, lineIdx) => (
+                  let letterIndex = 0;
+                  const totalLetters = currentQuote.lines.join("").replace(/ /g, "").length;
+                  return currentQuote.lines.map((line, lineIdx) => (
                     <span
                       key={`line-${lineIdx}`}
                       className="block text-center px-2 whitespace-nowrap"
@@ -272,20 +273,16 @@ export default function AnimatedQuotes() {
                         hyphens: "none"
                       }}
                     >
-                      {lineWords.map((word, wordIdx) => {
-                        const idx = wordIndex++;
+                      {line.split("").map((letter, charIdx) => {
+                        const idx = letter === " " ? -1 : letterIndex++;
                         return (
-                          <span key={`${currentQuoteIndex}-${idx}`}>
-                            <AnimatedWord
-                              word={word}
-                              index={idx}
-                              totalWords={totalWords}
-                              isScattered={phase === "scattered" || phase === "exiting"}
-                            />
-                            {wordIdx < lineWords.length - 1 && (
-                              <span className="inline-block">&nbsp;</span>
-                            )}
-                          </span>
+                          <AnimatedLetter
+                            key={`${currentQuoteIndex}-${lineIdx}-${charIdx}`}
+                            letter={letter}
+                            index={idx}
+                            totalLetters={totalLetters}
+                            isScattered={phase === "scattered" || phase === "exiting"}
+                          />
                         );
                       })}
                     </span>
