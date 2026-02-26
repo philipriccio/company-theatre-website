@@ -15,7 +15,7 @@ const quotes: Quote[] = [
     source: "The National Post"
   },
   {
-    lines: ["A MASTERPIECE."],
+    lines: ["A MASTERPIECE"],
     source: "The National Post"
   },
   {
@@ -265,10 +265,10 @@ export default function AnimatedQuotes() {
                   return linesWithWords.map((lineWords, lineIdx) => (
                     <span
                       key={`line-${lineIdx}`}
-                      className="block text-center px-2"
+                      className="block text-center px-2 whitespace-nowrap"
                       style={{
-                        wordWrap: "break-word",
-                        overflowWrap: "break-word",
+                        wordBreak: "keep-all",
+                        overflowWrap: "normal",
                         hyphens: "none"
                       }}
                     >
