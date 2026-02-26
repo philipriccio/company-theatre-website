@@ -43,7 +43,7 @@ const quotes: Quote[] = [
     source: "The Globe & Mail"
   },
   {
-    lines: ["THE MOST MUSCULAR PIECE OF THEATRE", "WE'VE SEEN IN TORONTO IN SOME TIME"],
+    lines: ["THE MOST MUSCULAR", "PIECE OF THEATRE WE'VE SEEN", "IN TORONTO IN SOME TIME"],
     source: "Richard Ouzounian, Toronto Star"
   },
   {
@@ -55,7 +55,7 @@ const quotes: Quote[] = [
     source: "Torontoist"
   },
   {
-    lines: ["MUSCULAR! DARKLY FUNNY!", "LIKE WATCHING AN EARTHQUAKE IN SLOW MOTION!"],
+    lines: ["MUSCULAR! DARKLY FUNNY!", "LIKE WATCHING AN EARTHQUAKE", "IN SLOW MOTION!"],
     source: "The Globe & Mail"
   },
   {
@@ -123,6 +123,7 @@ const AnimatedWord = ({ word, index, totalWords, isScattered }: WordProps) => {
   return (
     <motion.span
       className="inline-block whitespace-nowrap"
+      style={{ wordBreak: "keep-all", overflowWrap: "normal" }}
       initial={{
         x: randomPos.x,
         y: randomPos.y,
