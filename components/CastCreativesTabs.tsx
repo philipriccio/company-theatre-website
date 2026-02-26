@@ -2,9 +2,8 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Info, User } from "lucide-react";
+import { User } from "lucide-react";
 import { CastMember, CrewMember } from "@/lib/data";
-import Modal from "./Modal";
 
 interface CastCreativesTabsProps {
   cast: CastMember[];
@@ -13,11 +12,6 @@ interface CastCreativesTabsProps {
 
 export default function CastCreativesTabs({ cast, crew }: CastCreativesTabsProps) {
   const [activeTab, setActiveTab] = useState<"cast" | "creatives">("cast");
-  const [selectedPerson, setSelectedPerson] = useState<{ name: string; role: string; bio?: string } | null>(null);
-
-  const handlePersonClick = (name: string, role: string, bio?: string) => {
-    setSelectedPerson({ name, role, bio });
-  };
 
   return (
     <div className="border-t border-gray-200">
@@ -52,8 +46,8 @@ export default function CastCreativesTabs({ cast, crew }: CastCreativesTabsProps
         {activeTab === "cast" ? (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {cast.map((member, index) => (
-              <div key={index} className="group">
-                {/* Headshot */}
+              <div key={index}>
+                {/* Headshot - static image only */}
                 <div className="aspect-square bg-gray-100 mb-3 relative overflow-hidden">
                   {member.headshot ? (
                     <Image
@@ -67,12 +61,6 @@ export default function CastCreativesTabs({ cast, crew }: CastCreativesTabsProps
                       <User size={48} className="text-gray-300" />
                     </div>
                   )}
-                  <button
-                    onClick={() => handlePersonClick(member.actor, member.role || "Cast", member.bio)}
-                    className="absolute bottom-2 right-2 w-8 h-8 bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-md hover:bg-black hover:text-white"
-                  >
-                    <Info size={16} />
-                  </button>
                 </div>
                 <h4 className="font-bold text-sm leading-tight">{member.actor}</h4>
                 {member.role && (
@@ -84,52 +72,17 @@ export default function CastCreativesTabs({ cast, crew }: CastCreativesTabsProps
         ) : (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {crew.map((member, index) => (
-              <div key={index} className="group">
+              <div key={index}>
                 {/* Creatives: names and roles only, no headshots */}
-                <div className="flex items-start justify-between py-2">
-                  <div>
-                    <h4 className="font-bold text-sm leading-tight">{member.name}</h4>
-                    <p className="text-xs text-gray-500 mt-1 uppercase tracking-wide">{member.role}</p>
-                  </div>
-                  {member.bio && (
-                    <button
-                      onClick={() => handlePersonClick(member.name, member.role, member.bio)}
-                      className="w-8 h-8 border border-gray-200 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black hover:text-white hover:border-black"
-                    >
-                      <Info size={14} />
-                    </button>
-                  )}
+                <div className="py-2">
+                  <h4 className="font-bold text-sm leading-tight">{member.name}</h4>
+                  <p className="text-xs text-gray-500 mt-1 uppercase tracking-wide">{member.role}</p>
                 </div>
               </div>
             ))}
           </div>
         )}
       </div>
-
-      {/* Bio Modal */}
-      <Modal
-        isOpen={!!selectedPerson}
-        onClose={() => setSelectedPerson(null)}
-        title={selectedPerson?.name || ""}
-        subtitle={selectedPerson?.role}
-      >
-        <div className="space-y-4">
-          <div className="aspect-video bg-gray-100 flex items-center justify-center">
-            <User size={64} className="text-gray-300" />
-          </div>
-          {selectedPerson?.bio ? (
-            <p className="body-md text-gray-700">{selectedPerson.bio}</p>
-          ) : (
-            <div className="space-y-4 text-gray-600">
-              <p>Biography coming soon.</p>
-              <p className="text-sm italic">
-                {selectedPerson?.name} is a talented {selectedPerson?.role.toLowerCase()} 
-                who has worked with The Company Theatre on this production.
-              </p>
-            </div>
-          )}
-        </div>
-      </Modal>
     </div>
   );
 }
