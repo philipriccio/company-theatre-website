@@ -119,7 +119,7 @@ export default function Home() {
                   </h3>
                   <p className="text-sm text-gray-600 line-clamp-2">{production.synopsis}</p>
                   <div className="flex gap-3 mt-4">
-                    <span className="btn-secondary text-xs py-2 px-4">Event Information</span>
+                    <span className="btn-secondary text-xs py-2 px-4">More Information</span>
                     <span className="btn-primary text-xs py-2 px-4 opacity-50 cursor-not-allowed">Closed</span>
                   </div>
                 </div>

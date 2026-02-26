@@ -103,7 +103,7 @@ export default async function ShowPage({ params }: ShowPageProps) {
               {/* Dual CTAs */}
               <div className="flex flex-wrap gap-4 mb-8">
                 <button className="btn-secondary flex-1 sm:flex-none justify-center">
-                  Event Information
+                  More Information
                 </button>
                 <button 
                   className={`btn-primary flex-1 sm:flex-none justify-center ${isPast ? 'opacity-50 cursor-not-allowed' : ''}`}

@@ -250,7 +250,7 @@ export default function AnimatedQuotes() {
                 className="text-white font-bold uppercase leading-[1.1] tracking-tight drop-shadow-lg flex flex-col items-center"
                 style={{ 
                   fontFamily: "'Bebas Neue', 'Impact', 'Arial Narrow', sans-serif",
-                  fontSize: "clamp(2rem, 8vw, 5.5rem)",
+                  fontSize: "clamp(1.5rem, 6vw, 5.5rem)",
                   letterSpacing: "0.02em",
                   textShadow: "0 4px 20px rgba(0,0,0,0.8)"
                 }}
@@ -259,7 +259,7 @@ export default function AnimatedQuotes() {
                   let letterIndex = 0;
                   const totalLetters = linesWithLetters.flat().length;
                   return linesWithLetters.map((lineLetters, lineIdx) => (
-                    <span key={`line-${lineIdx}`} className="block whitespace-nowrap">
+                    <span key={`line-${lineIdx}`} className="block text-center px-2">
                       {lineLetters.map((char) => {
                         const idx = letterIndex++;
                         return (
