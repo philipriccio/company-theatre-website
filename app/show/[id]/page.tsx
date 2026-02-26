@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Calendar, MapPin, Clock, AlertCircle } from "lucide-react";
@@ -7,6 +8,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import CastCreativesTabs from "@/components/CastCreativesTabs";
 import ProductionGallery from "@/components/ProductionGallery";
+import { ProductionSchema } from "@/components/StructuredData";
 
 interface ShowPageProps {
   params: Promise<{ id: string }>;
@@ -19,17 +21,44 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: ShowPageProps) {
+export async function generateMetadata({ params }: ShowPageProps): Promise<Metadata> {
   const { id } = await params;
   const production = getProductionById(id);
   
   if (!production) {
     return { title: "Production Not Found" };
   }
+
+  const description = `${production.title} by ${production.playwright}. ${production.synopsis.slice(0, 120)}...`;
+  const imageUrl = production.images[0] ? `https://companytheatre.ca${production.images[0]}` : undefined;
+  const castNames = production.cast.slice(0, 3).map(c => c.actor).join(", ");
   
   return {
-    title: `${production.title} | The Company Theatre`,
-    description: production.synopsis.slice(0, 160),
+    title: production.title,
+    description,
+    keywords: [
+      production.title,
+      production.playwright,
+      production.director || "",
+      ...production.cast.slice(0, 5).map(c => c.actor),
+      "Toronto theatre",
+      "Company Theatre",
+    ].filter(Boolean),
+    openGraph: {
+      title: `${production.title} | The Company Theatre`,
+      description: `${production.title} by ${production.playwright}. Featuring ${castNames}. ${production.venue}.`,
+      type: "article",
+      images: imageUrl ? [{ url: imageUrl, width: 1200, height: 630, alt: production.title }] : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${production.title} | The Company Theatre`,
+      description: `${production.title} by ${production.playwright}. Featuring ${castNames}.`,
+      images: imageUrl ? [imageUrl] : undefined,
+    },
+    alternates: {
+      canonical: `https://companytheatre.ca/show/${id}`,
+    },
   };
 }
 
@@ -47,6 +76,7 @@ export default async function ShowPage({ params }: ShowPageProps) {
 
   return (
     <main className="min-h-screen bg-white">
+      <ProductionSchema production={production} />
       <Navigation />
 
       {/* Hero Banner */}
