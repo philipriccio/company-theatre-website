@@ -211,7 +211,7 @@ export default function AnimatedQuotes() {
   }, [phase, nextQuote]);
 
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+    <div className="relative min-h-[70vh] md:min-h-screen flex flex-col items-center justify-center overflow-hidden">
       {/* Background Slideshow */}
       <div className="absolute inset-0 z-0">
         {slideshowImages.map((image, index) => (
@@ -224,7 +224,7 @@ export default function AnimatedQuotes() {
               src={image.src}
               alt={image.alt}
               fill
-              className="object-cover animate-zoom"
+              className="object-cover animate-zoom object-top md:object-center"
               priority={index === 0}
             />
           </div>
