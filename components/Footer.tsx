@@ -20,6 +20,8 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 border border-white/30 flex items-center justify-center hover:bg-white hover:text-black transition-colors"
+                aria-label="Instagram"
+                title="Instagram"
               >
                 <Instagram size={20} />
               </a>
@@ -28,6 +30,8 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 border border-white/30 flex items-center justify-center hover:bg-white hover:text-black transition-colors"
+                aria-label="X (formerly Twitter)"
+                title="X (formerly Twitter)"
               >
                 <Twitter size={20} />
               </a>
@@ -36,6 +40,8 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 border border-white/30 flex items-center justify-center hover:bg-white hover:text-black transition-colors"
+                aria-label="Facebook"
+                title="Facebook"
               >
                 <Facebook size={20} />
               </a>
@@ -44,12 +50,16 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 border border-white/30 flex items-center justify-center hover:bg-white hover:text-black transition-colors"
+                aria-label="YouTube"
+                title="YouTube"
               >
                 <Youtube size={20} />
               </a>
               <a 
                 href={`mailto:${theatreInfo.contact.email}`}
                 className="w-10 h-10 border border-white/30 flex items-center justify-center hover:bg-white hover:text-black transition-colors"
+                aria-label="Email"
+                title="Email"
               >
                 <Mail size={20} />
               </a>

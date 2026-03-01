@@ -1,4 +1,6 @@
-import { theatreInfo } from '@/lib/data';
+import { currentProduction, theatreInfo } from '@/lib/data';
+
+const baseUrl = 'https://companytheatre.ca';
 
 export function OrganizationSchema() {
   const schema = {
@@ -7,8 +9,8 @@ export function OrganizationSchema() {
     name: theatreInfo.name,
     description: theatreInfo.about.whoWeAre,
     foundingDate: theatreInfo.founded.toString(),
-    url: 'https://companytheatre.ca',
-    logo: 'https://companytheatre.ca/images/logo-main.png',
+    url: baseUrl,
+    logo: `${baseUrl}/images/logo-main.png`,
     sameAs: [
       theatreInfo.contact.social.facebook,
       theatreInfo.contact.social.twitter,
@@ -41,8 +43,52 @@ export function OrganizationSchema() {
   );
 }
 
+export function HomePageSchema() {
+  const upcomingProductionSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'TheaterEvent',
+    name: currentProduction.title,
+    description: currentProduction.synopsis,
+    eventStatus: 'https://schema.org/EventScheduled',
+    startDate: '2027-03-12',
+    endDate: '2027-04-18',
+    location: {
+      '@type': 'PerformingArtsTheater',
+      name: currentProduction.venue,
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Toronto',
+        addressRegion: 'ON',
+        addressCountry: 'CA',
+      },
+    },
+    organizer: {
+      '@type': 'TheaterGroup',
+      name: theatreInfo.name,
+      url: baseUrl,
+    },
+    workPerformed: {
+      '@type': 'CreativeWork',
+      name: currentProduction.title,
+      author: {
+        '@type': 'Person',
+        name: currentProduction.playwright,
+      },
+    },
+    url: `${baseUrl}/show/${currentProduction.id}`,
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(upcomingProductionSchema) }}
+    />
+  );
+}
+
 interface ProductionSchemaProps {
   production: {
+    id?: string;
     title: string;
     playwright: string;
     director?: string;
@@ -55,13 +101,15 @@ interface ProductionSchemaProps {
 }
 
 export function ProductionSchema({ production }: ProductionSchemaProps) {
+  const productionSlug = production.id || production.title.toLowerCase().replace(/\s+/g, '-');
+
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'TheaterEvent',
     name: production.title,
     description: production.synopsis,
-    url: `https://companytheatre.ca/show/${production.title.toLowerCase().replace(/\s+/g, '-')}`,
-    image: production.images[0] ? `https://companytheatre.ca${production.images[0]}` : undefined,
+    url: `${baseUrl}/show/${productionSlug}`,
+    image: production.images[0] ? `${baseUrl}${production.images[0]}` : undefined,
     location: {
       '@type': 'PerformingArtsTheater',
       name: production.venue,
@@ -75,16 +123,18 @@ export function ProductionSchema({ production }: ProductionSchemaProps) {
     organizer: {
       '@type': 'TheaterGroup',
       name: 'The Company Theatre',
-      url: 'https://companytheatre.ca',
+      url: baseUrl,
     },
     performer: production.cast.map((member) => ({
       '@type': 'Person',
       name: member.actor,
     })),
-    director: production.director ? {
-      '@type': 'Person',
-      name: production.director,
-    } : undefined,
+    director: production.director
+      ? {
+          '@type': 'Person',
+          name: production.director,
+        }
+      : undefined,
     workPerformed: {
       '@type': 'Play',
       name: production.title,

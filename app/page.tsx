@@ -1,16 +1,26 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Calendar, MapPin, Mail, Instagram, Twitter, Facebook, Youtube, User } from "lucide-react";
-import { productions, theatreInfo } from "@/lib/data";
+import { ArrowRight, Calendar } from "lucide-react";
+import { currentProduction, productions, theatreInfo } from "@/lib/data";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AnimatedQuotes from "@/components/AnimatedQuotes";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import ClientScripts from "@/components/ClientScripts";
+import { HomePageSchema } from "@/components/StructuredData";
+
+const formattedCurrentUpdate = currentProduction.lastUpdated
+  ? new Date(currentProduction.lastUpdated).toLocaleDateString("en-CA", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    })
+  : null;
 
 export default function Home() {
   return (
     <main>
+      <HomePageSchema />
       <ClientScripts />
       <Navigation />
 
@@ -27,13 +37,13 @@ export default function Home() {
           </div>
           <div className="max-w-3xl mx-auto text-center">
             <div className="mb-8 flex justify-center">
-              <Image 
-                src="/images/logo-white-large.png" 
-                alt="The Company Theatre" 
-                width={500} 
-                height={160} 
-                className="h-36 md:h-48 w-auto brightness-110 contrast-110" 
-                id="color-logo" 
+              <Image
+                src="/images/logo-white-large.png"
+                alt="The Company Theatre"
+                width={500}
+                height={160}
+                className="h-36 md:h-48 w-auto brightness-110 contrast-110"
+                id="color-logo"
               />
             </div>
             <div className="text-xl md:text-3xl text-white font-black uppercase tracking-tight leading-tight mb-10 space-y-2 brightness-110">
@@ -41,7 +51,17 @@ export default function Home() {
               <p>World-class actors.</p>
               <p>Stories that stay with you.</p>
             </div>
+            <div className="mx-auto max-w-2xl rounded-2xl border border-white/15 bg-white/5 px-5 py-6 mb-8 backdrop-blur-sm">
+              <p className="text-white text-sm md:text-base font-semibold uppercase tracking-wide mb-2">Coming Soon</p>
+              <p className="text-white/80 text-sm md:text-base">
+                Be first in line for our next production announcement and early ticket details.
+              </p>
+            </div>
             <div className="flex flex-wrap gap-4 justify-center">
+              <Link href="#current" className="btn-primary">
+                Get First Access
+                <ArrowRight size={18} />
+              </Link>
               <Link href="#about" className="btn-secondary border-white text-white hover:bg-white hover:text-black">
                 Our Story
                 <ArrowRight size={18} />
@@ -57,6 +77,12 @@ export default function Home() {
           <div className="max-w-3xl mx-auto text-center py-16">
             <span className="status-badge">Coming Soon</span>
             <h2 className="heading-xl mb-6 mt-8">Our Next Production</h2>
+            {formattedCurrentUpdate && (
+              <p className="inline-flex items-center gap-2 text-xs md:text-sm text-gray-500 tracking-wide uppercase mb-5">
+                <Calendar size={14} />
+                Last updated {formattedCurrentUpdate}
+              </p>
+            )}
             <p className="body-lg text-gray-700 mb-12">
               Something extraordinary is in the works.<br />
               We&apos;re preparing our most ambitious production yet<br />
@@ -87,11 +113,11 @@ export default function Home() {
               <p className="body-sm text-gray-500 mt-2">{productions.length} productions from 2005–2023</p>
             </div>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {productions.map((production) => (
-              <Link 
-                key={production.id} 
+              <Link
+                key={production.id}
                 href={`/show/${production.id}`}
                 className="production-card group bg-white"
               >
@@ -117,7 +143,9 @@ export default function Home() {
                   <h3 className="heading-md text-xl group-hover:text-accent transition-colors mb-2">
                     {production.title}
                   </h3>
-                  <p className="text-sm text-gray-600 line-clamp-2">{production.synopsis}</p>
+                  <p className="text-sm text-gray-600 leading-relaxed line-clamp-3 md:line-clamp-4">
+                    {production.synopsis}
+                  </p>
                   <div className="flex gap-3 mt-4">
                     <span className="btn-secondary text-xs py-2 px-4">More Information</span>
                     <span className="btn-primary text-xs py-2 px-4 opacity-50 cursor-not-allowed">Closed</span>

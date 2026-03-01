@@ -62,6 +62,7 @@ export interface Production {
   advisory?: string;
   press?: { title: string; source: string }[];
   status: "current" | "past" | "upcoming";
+  lastUpdated?: string;
 }
 
 export const productions: Production[] = [
@@ -695,7 +696,8 @@ export const currentProduction: Production = {
     { role: "Playwright", name: "Sarah Chen" }
   ],
   images: [],
-  status: "current"
+  status: "current",
+  lastUpdated: "2026-03-01"
 };
 
 // Historical productions for reference
