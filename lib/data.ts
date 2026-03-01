@@ -678,23 +678,17 @@ export const productions: Production[] = [
   }
 ];
 
-// Current/upcoming production (placeholder for March 2027)
+// Current/upcoming production (public teaser only until official announcement)
 export const currentProduction: Production = {
-  id: "jackpot-twins",
-  title: "Jackpot Twins",
-  playwright: "Sarah Chen",
-  director: "James Morrison",
-  dates: "March 12 – April 18, 2027",
-  venue: "CAA Theatre — 651 Yonge St",
-  synopsis: "When estranged siblings Mia and Lucas inherit their grandmother's struggling casino, they must confront their shared past while fighting to save the family legacy. A darkly comic thriller about luck, family, and the hands we're dealt.",
-  cast: [
-    { role: "Mia", actor: "TBD" },
-    { role: "Lucas", actor: "TBD" }
-  ],
-  crew: [
-    { role: "Director", name: "James Morrison" },
-    { role: "Playwright", name: "Sarah Chen" }
-  ],
+  id: "next-production",
+  title: "Our Next Production",
+  playwright: "To Be Announced",
+  director: "To Be Announced",
+  dates: "Announcement coming soon",
+  venue: "Toronto, Canada",
+  synopsis: "Something extraordinary is in the works. We’re preparing our most ambitious production yet with some of Canada’s best actors. Join the mailing list to be first to know when we announce.",
+  cast: [],
+  crew: [],
   images: [],
   status: "current",
   lastUpdated: "2026-03-01"
