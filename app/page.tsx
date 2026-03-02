@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Calendar } from "lucide-react";
+import { Calendar } from "lucide-react";
 import { currentProduction, productions, theatreInfo } from "@/lib/data";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -51,20 +51,9 @@ export default function Home() {
               <p>World-class actors.</p>
               <p>Stories that stay with you.</p>
             </div>
-            <div className="mx-auto max-w-2xl rounded-2xl border border-white/15 bg-white/5 px-5 py-6 mb-8 backdrop-blur-sm">
-              <p className="text-white text-sm md:text-base font-semibold uppercase tracking-wide mb-2">Coming Soon</p>
-              <p className="text-white/80 text-sm md:text-base">
-                Be first in line for our next production announcement and early ticket details.
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Link href="#current" className="btn-primary">
-                Get First Access
-                <ArrowRight size={18} />
-              </Link>
+            <div className="flex justify-center">
               <Link href="#about" className="btn-secondary border-white text-white hover:bg-white hover:text-black">
                 Our Story
-                <ArrowRight size={18} />
               </Link>
             </div>
           </div>
