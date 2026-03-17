@@ -5,16 +5,11 @@ import { currentProduction, productions, theatreInfo } from "@/lib/data";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AnimatedQuotes from "@/components/AnimatedQuotes";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import ClientScripts from "@/components/ClientScripts";
 import { HomePageSchema } from "@/components/StructuredData";
 
-const formattedCurrentUpdate = currentProduction.lastUpdated
-  ? new Date(currentProduction.lastUpdated).toLocaleDateString("en-CA", {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    })
-  : null;
+
 
 export default function Home() {
   return (
@@ -65,17 +60,25 @@ export default function Home() {
           <div className="max-w-3xl mx-auto text-center py-16">
             <span className="status-badge">Coming Soon</span>
             <h2 className="heading-xl mb-6 mt-8">Our Next Production</h2>
-            {formattedCurrentUpdate && (
-              <p className="inline-flex items-center gap-2 text-xs md:text-sm text-gray-500 tracking-wide uppercase mb-5">
-                <Calendar size={14} />
-                Last updated {formattedCurrentUpdate}
-              </p>
-            )}
+            <p className="inline-flex items-center gap-2 text-xs md:text-sm text-accent font-semibold tracking-wide uppercase mb-5">
+              <Calendar size={14} />
+              Announcement: March 31, 2026
+            </p>
             <p className="body-lg text-gray-700 mb-12">
               Something extraordinary is in the works.<br />
               We&apos;re preparing our most ambitious production yet<br />
               with some of Canada&apos;s best actors.
             </p>
+            <div className="bg-black rounded-2xl p-10 md:p-14">
+              <h3 className="text-white text-2xl md:text-3xl font-bold uppercase tracking-wide mb-3">
+                Be the First to Know
+              </h3>
+              <p className="text-white/70 text-lg mb-8">
+                Sign up and we&apos;ll let you know the moment<br />
+                we make our announcement on March 31.
+              </p>
+              <NewsletterSignup showNameFields={true} />
+            </div>
           </div>
         </div>
       </section>
