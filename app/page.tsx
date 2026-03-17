@@ -5,7 +5,6 @@ import { currentProduction, productions, theatreInfo } from "@/lib/data";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AnimatedQuotes from "@/components/AnimatedQuotes";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import ClientScripts from "@/components/ClientScripts";
 import { HomePageSchema } from "@/components/StructuredData";
 
@@ -77,16 +76,6 @@ export default function Home() {
               We&apos;re preparing our most ambitious production yet<br />
               with some of Canada&apos;s best actors.
             </p>
-            <div className="bg-black rounded-2xl p-10 md:p-14">
-              <h3 className="text-white text-2xl md:text-3xl font-bold uppercase tracking-wide mb-3">
-                Don&apos;t Miss It
-              </h3>
-              <p className="text-white/70 text-lg mb-8">
-                Be the first to know<br />
-                when we announce our next production.
-              </p>
-              <NewsletterSignup />
-            </div>
           </div>
         </div>
       </section>
