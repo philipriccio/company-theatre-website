@@ -32,11 +32,11 @@ export default function Home() {
           <div className="max-w-3xl mx-auto text-center">
             <div className="mb-8 flex justify-center">
               <Image
-                src="/images/logo-white-large.png"
+                src="/images/logo.svg"
                 alt="The Company Theatre"
                 width={500}
                 height={160}
-                className="h-36 md:h-48 w-auto brightness-110 contrast-110"
+                className="h-36 md:h-48 w-auto brightness-0 invert"
                 id="color-logo"
               />
             </div>

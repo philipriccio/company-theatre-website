@@ -17,10 +17,10 @@ export default function Navigation() {
         {/* Logo - B&W */}
         <Link href="/" className="flex flex-col items-center" onClick={closeMenu}>
           <Image 
-            src="/images/logo-main.png" 
+            src="/images/logo.svg" 
             alt="Company Theatre" 
-            width={120} 
-            height={32} 
+            width={200} 
+            height={52} 
             className="h-8 w-auto brightness-0 invert" 
           />
         </Link>
