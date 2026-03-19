@@ -77,55 +77,60 @@ export default function JackpotTwinsPage() {
     <main className="min-h-screen bg-black text-white">
       <Navigation />
 
-      <section className="relative overflow-hidden bg-black pt-20">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/jackpot-twins/poster-web-1800x750.jpg"
-            alt="Jackpot Twins poster"
-            fill
-            priority
-            className="object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.2)_0%,rgba(0,0,0,0.72)_45%,rgba(0,0,0,0.96)_100%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,59,29,0.22),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(255,59,29,0.12),transparent_25%)]" />
-        </div>
-
-        <div className="relative container-main px-6 py-16 md:px-10 md:py-24 lg:py-32">
-          <div className="max-w-3xl">
-            <p className="mb-5 text-sm font-bold uppercase tracking-[0.24em] text-accent">
-              World Premiere • CAA Theatre • March 2027
-            </p>
-            <h1 className="heading-xl mb-6 text-white">Jackpot Twins</h1>
-            <p className="mb-8 max-w-2xl text-lg leading-relaxed text-white/80 md:text-2xl">
-              Winning the lottery is easy. Surviving it is the hard part.
-            </p>
-
-            <div className="grid max-w-2xl gap-4 border border-white/15 bg-black/40 p-5 backdrop-blur-sm md:grid-cols-3 md:p-6">
-              <div>
-                <p className="mb-1 text-xs uppercase tracking-[0.2em] text-white/50">Previews</p>
-                <p className="font-semibold text-white">From March 9, 2027</p>
-              </div>
-              <div>
-                <p className="mb-1 text-xs uppercase tracking-[0.2em] text-white/50">Press Opening</p>
-                <p className="font-semibold text-white">March 14, 2027 · 2 PM</p>
-              </div>
-              <div>
-                <p className="mb-1 text-xs uppercase tracking-[0.2em] text-white/50">Tickets</p>
-                <p className="font-semibold text-white">Via Mirvish Productions</p>
+      <section className="bg-black pt-20 text-white">
+        <div className="container-main px-6 py-12 md:px-10 md:py-16 lg:py-20">
+          <div className="grid items-center gap-10 border border-white/10 bg-[#050505] p-6 md:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14 lg:p-12">
+            <div className="flex justify-center bg-black p-4 md:p-6">
+              <div className="w-full max-w-[440px] border border-white/10 bg-[#0a0a0a] p-3 shadow-[0_24px_70px_rgba(0,0,0,0.45)] md:p-4">
+                <div className="relative aspect-[5/8] w-full bg-black">
+                  <Image
+                    src="/images/jackpot-twins/poster-5x8-web.jpg"
+                    alt="Jackpot Twins portrait poster"
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    className="object-contain"
+                  />
+                </div>
               </div>
             </div>
 
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <Link href="https://mirvish.com" className="btn-primary" target="_blank" rel="noreferrer">
-                Get Tickets
-                <ArrowRight size={18} />
-              </Link>
-              <Link
-                href="#production-details"
-                className="btn-secondary border-white text-white hover:bg-white hover:text-black"
-              >
-                Production Details
-              </Link>
+            <div className="max-w-3xl">
+              <p className="mb-5 text-sm font-bold uppercase tracking-[0.24em] text-accent">
+                World Premiere • CAA Theatre • March 2027
+              </p>
+              <h1 className="heading-xl mb-6 text-white">Jackpot Twins</h1>
+              <p className="mb-8 max-w-2xl text-lg leading-relaxed text-white/80 md:text-2xl">
+                Winning the lottery is easy. Surviving it is the hard part.
+              </p>
+
+              <div className="grid max-w-2xl gap-4 border border-white/15 bg-white/[0.03] p-5 md:grid-cols-3 md:p-6">
+                <div>
+                  <p className="mb-1 text-xs uppercase tracking-[0.2em] text-white/50">Previews</p>
+                  <p className="font-semibold text-white">From March 9, 2027</p>
+                </div>
+                <div>
+                  <p className="mb-1 text-xs uppercase tracking-[0.2em] text-white/50">Press Opening</p>
+                  <p className="font-semibold text-white">March 14, 2027 · 2 PM</p>
+                </div>
+                <div>
+                  <p className="mb-1 text-xs uppercase tracking-[0.2em] text-white/50">Tickets</p>
+                  <p className="font-semibold text-white">Via Mirvish Productions</p>
+                </div>
+              </div>
+
+              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                <Link href="https://mirvish.com" className="btn-primary" target="_blank" rel="noreferrer">
+                  Get Tickets
+                  <ArrowRight size={18} />
+                </Link>
+                <Link
+                  href="#production-details"
+                  className="btn-secondary border-white text-white hover:bg-white hover:text-black"
+                >
+                  Production Details
+                </Link>
+              </div>
             </div>
           </div>
         </div>
