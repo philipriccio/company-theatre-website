@@ -1,15 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Calendar } from "lucide-react";
 import { currentProduction, productions, theatreInfo } from "@/lib/data";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AnimatedQuotes from "@/components/AnimatedQuotes";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import ClientScripts from "@/components/ClientScripts";
 import { HomePageSchema } from "@/components/StructuredData";
-
-
+import UpcomingProductionSection from "@/app/components/UpcomingProductionSection";
 
 export default function Home() {
   return (
@@ -18,12 +15,10 @@ export default function Home() {
       <ClientScripts />
       <Navigation />
 
-      {/* Animated Quotes Hero Section with Background Slideshow */}
       <section className="relative bg-[#0a0a0a] pt-20">
         <AnimatedQuotes />
       </section>
 
-      {/* Radically Live Section - Full width text on black background */}
       <section className="relative bg-black py-16 md:py-24 overflow-hidden">
         <div className="container-main">
           <div className="max-w-4xl mx-auto text-center mb-12">
@@ -54,39 +49,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Current Production - Vertical Design (KEEP THIS ONE) */}
-      <section id="current" className="section-padding bg-white">
-        <div className="container-main">
-          <div className="max-w-3xl mx-auto text-center py-16">
-            <span className="status-badge">Coming Soon</span>
-            <h2 className="heading-xl mb-6 mt-8">Our Next Production</h2>
-            <p className="inline-flex items-center gap-2 text-xs md:text-sm text-accent font-semibold tracking-wide uppercase mb-5">
-              <Calendar size={14} />
-              Announcement: March 31, 2026
-            </p>
-            <p className="body-lg text-gray-700 mb-12">
-              Something extraordinary is in the works.<br />
-              We&apos;re preparing our most ambitious production yet<br />
-              with some of Canada&apos;s best actors.
-            </p>
-            <div className="bg-black rounded-2xl p-10 md:p-14">
-              <h3 className="text-white text-2xl md:text-3xl font-bold uppercase tracking-wide mb-3">
-                Be the First to Know
-              </h3>
-              <p className="text-white/70 text-lg mb-8">
-                Sign up and we&apos;ll let you know the moment<br />
-                we make our announcement on March 31.
-              </p>
-              <NewsletterSignup showNameFields={true} />
-            </div>
-          </div>
-        </div>
-      </section>
+      <UpcomingProductionSection />
 
-      {/* Productions - Past Productions Only */}
       <section id="productions" className="section-padding bg-gray-100">
         <div className="container-main">
-          {/* Past Productions */}
           <div className="flex items-end justify-between mb-12">
             <div>
               <span className="body-sm text-gray-600 mb-2 block">Archive</span>
@@ -112,9 +78,7 @@ export default function Home() {
                     />
                   ) : (
                     <div className="absolute inset-0 bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900 flex items-center justify-center">
-                      <span className="text-white/20 heading-xl text-4xl">
-                        {production.title.charAt(0)}
-                      </span>
+                      <span className="text-white/20 heading-xl text-4xl">{production.title.charAt(0)}</span>
                     </div>
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
@@ -138,28 +102,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Section - Full width text on black background */}
       <section id="about" className="section-padding bg-black text-white">
         <div className="container-main">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="heading-xl mb-10">
-              RADICALLY LIVE.
-            </h2>
+            <h2 className="heading-xl mb-10">RADICALLY LIVE.</h2>
             <div className="space-y-6 body-lg text-white/80 text-left md:text-center">
-              <p>
-                {theatreInfo.about.whoWeAre}
-              </p>
-              <p>
-                {theatreInfo.about.mission}
-              </p>
-              <p>
-                {theatreInfo.about.approach}
-              </p>
+              <p>{theatreInfo.about.whoWeAre}</p>
+              <p>{theatreInfo.about.mission}</p>
+              <p>{theatreInfo.about.approach}</p>
             </div>
             <div className="mt-12 pt-10 border-t border-white/20">
-              <p className="text-white/60 italic text-lg">
-                {theatreInfo.about.stats}
-              </p>
+              <p className="text-white/60 italic text-lg">{theatreInfo.about.stats}</p>
             </div>
             <div className="mt-12 flex flex-wrap gap-10 justify-center">
               <div>
