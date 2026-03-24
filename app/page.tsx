@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { currentProduction, productions, theatreInfo } from "@/lib/data";
+import { productions, theatreInfo } from "@/lib/data";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AnimatedQuotes from "@/components/AnimatedQuotes";
@@ -8,7 +8,17 @@ import ClientScripts from "@/components/ClientScripts";
 import { HomePageSchema } from "@/components/StructuredData";
 import UpcomingProductionSection from "@/app/components/UpcomingProductionSection";
 
-export default function Home() {
+const REVEAL_DATE = new Date("2026-03-31T00:00:00-05:00");
+
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
+  const params = await searchParams;
+  const forceReveal = "reveal" in params;
+  const revealed = forceReveal || new Date() >= REVEAL_DATE;
+
   return (
     <main>
       <HomePageSchema />
@@ -49,7 +59,7 @@ export default function Home() {
         </div>
       </section>
 
-      <UpcomingProductionSection />
+      <UpcomingProductionSection initialRevealed={revealed} />
 
       <section id="productions" className="section-padding bg-gray-100">
         <div className="container-main">
