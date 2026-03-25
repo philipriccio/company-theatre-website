@@ -62,13 +62,7 @@ export function JackpotTwinsTeaserSection() {
               Something extraordinary is on deck. We&apos;re preparing a new production with some of Canada&apos;s
               finest actors — and we&apos;ll reveal everything on March 31.
             </p>
-            <Link
-              href="/jackpot-twins"
-              className="mt-8 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-gray-600 transition hover:text-accent"
-            >
-              Preview the production page
-              <span aria-hidden="true">→</span>
-            </Link>
+            {/* Link removed — embargoed until March 31 */}
           </div>
 
           <div className="mx-auto mt-12 max-w-4xl border border-black bg-black px-6 py-10 text-center shadow-[12px_12px_0_0_#ff3b1d] md:px-10 md:py-12">
