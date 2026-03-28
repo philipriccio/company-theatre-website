@@ -27,10 +27,10 @@ const cast = [
     bio: "Tony Nappo has appeared in roughly 70 films, hundreds of TV episodes, and more Toronto stages than most people have visited. Born in Scarborough, trained at the American Academy of Dramatic Arts in Manhattan, he's the kind of actor critics describe as \"razor-sharp\" and \"effortlessly magnetic.\" He's appeared alongside Al Pacino, played a recurring villain in Bad Blood, voiced a gangster in Fugget About It, and wrote the beloved column Nappoholics Anonymous for Intermission Magazine. If you've watched Canadian TV in the last twenty years, you've seen him.",
   },
   {
-    actor: "Colin A. Doyle",
+    actor: "Colin A Doyle",
     role: "Harold Bates",
     image: "/images/jackpot-twins/headshots/colin-doyle.jpg",
-    bio: "Colin A. Doyle is a Toronto-based actor and theatre producer who has performed across Canada, the US, and Europe. A York University Acting Conservatory graduate, he has worked with some of the most inventive companies in the country — Outside the March, Factory Theatre, Theatre Passe Muraille, Why Not Theatre — and has played everything from Peter Pan to a post-apocalyptic Homer Simpson. The range is real.",
+    bio: "Colin A Doyle is a Dora Award\u2013winning, Toronto-based actor and theatre producer who has performed across Canada, the US, and Europe. A York University Acting Conservatory graduate, he has worked with some of the most inventive companies in the country \u2014 Outside the March, Canadian Stage, Obsidian Theatre, Crow\u2019s Theatre, Caravan, Coal Mine Theatre, and Mirvish \u2014 and has played everything from Peter Pan to a post-apocalyptic Homer Simpson. The range is real.",
   },
   {
     actor: "Caroline Toal",
