@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Instagram, Twitter, Facebook, Youtube, Mail } from "lucide-react";
 import { theatreInfo } from "@/lib/data";
-import NewsletterSignup from "./NewsletterSignup";
+import { SignupButton } from "./SignupModal";
 
 export default function Footer() {
   return (
@@ -101,7 +101,9 @@ export default function Footer() {
             <p className="text-white/60 mb-8">
               Join our mailing list for news, updates, and exclusive invitations.
             </p>
-            <NewsletterSignup compact />
+            <SignupButton className="px-8 py-4 bg-accent hover:bg-accent/90 text-white font-bold uppercase tracking-wide rounded-lg transition-all inline-flex items-center gap-2">
+              Sign Up
+            </SignupButton>
           </div>
         </div>
         

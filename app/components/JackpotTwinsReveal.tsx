@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import NewsletterSignup from "@/components/NewsletterSignup";
+import { SignupButton } from "@/components/SignupModal";
 
 type SearchParams = Record<string, string | string[] | undefined>;
 
@@ -38,7 +38,9 @@ export function JackpotTwinsTeaserSection() {
               rises on what&apos;s next.
             </p>
             <div className="mt-8">
-              <NewsletterSignup showNameFields={true} />
+              <SignupButton className="px-8 py-4 bg-accent hover:bg-accent/90 text-white text-lg font-bold uppercase tracking-wide rounded-lg transition-all inline-flex items-center gap-2">
+                Sign Up
+              </SignupButton>
             </div>
           </div>
         </div>

@@ -5,7 +5,7 @@ import { ArrowLeft, Calendar, MapPin, Clock, Star } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import CastCreativesTabs from "@/components/CastCreativesTabs";
-import NewsletterSignup from "@/components/NewsletterSignup";
+import { SignupButton } from "@/components/SignupModal";
 import { CastMember, CrewMember } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -41,27 +41,22 @@ export const metadata: Metadata = {
 const cast: CastMember[] = [
   {
     actor: "Seana McKenna",
-    role: "Geraldine Fitzgerald",
     headshot: "/images/jackpot-twins/headshots/seana-mckenna.jpeg",
   },
   {
     actor: "Nora McLellan",
-    role: "Bernadette Fitzgerald",
     headshot: "/images/jackpot-twins/headshots/nora-mclellan.jpeg",
   },
   {
     actor: "Tony Nappo",
-    role: "Peter Mallory",
     headshot: "/images/jackpot-twins/headshots/tony-nappo.jpg",
   },
   {
     actor: "Colin A Doyle",
-    role: "Harold Bates",
     headshot: "/images/jackpot-twins/headshots/colin-doyle.jpg",
   },
   {
     actor: "Caroline Toal",
-    role: "Abigail",
     headshot: "/images/jackpot-twins/headshots/caroline-toal.jpg",
   },
 ];
@@ -95,23 +90,33 @@ export default function JackpotTwinsPage() {
           </div>
         </div>
 
-        {/* Hero Image */}
-        <div className="relative h-[65vh] md:h-[80vh]">
+        {/* Hero Image — poster displayed clean, no overlay */}
+        <div className="relative bg-black">
           <Image
-            src="/images/jackpot-twins/poster-portrait.jpg"
+            src="/images/jackpot-twins/poster-web-1800x1200.jpg"
             alt="Jackpot Twins"
-            fill
-            className="object-cover object-top"
+            width={1800}
+            height={1200}
+            className="w-full h-auto"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+        </div>
 
-          {/* Hero Content */}
-          <div className="absolute bottom-0 left-0 right-0 container-main px-6 pb-8 md:pb-12">
-            <h1 className="heading-xl text-white mb-4">Jackpot Twins</h1>
-            <p className="text-white/80 text-lg md:text-xl font-medium">
-              by Philip Riccio · March 9–28, 2027 · CAA Theatre, Toronto
-            </p>
+        {/* Title & Details below poster */}
+        <div className="bg-black container-main px-6 py-8 md:py-12 text-center">
+          <h1 className="heading-xl text-white mb-4">Jackpot Twins</h1>
+          <p className="text-white/80 text-lg md:text-xl font-medium">
+            by Philip Riccio · March 9–28, 2027 · CAA Theatre, Toronto
+          </p>
+          <div className="mt-8">
+            <Link
+              href="https://jackpottwins.ca"
+              target="_blank"
+              rel="noreferrer"
+              className="btn-primary inline-flex items-center justify-center text-lg px-10 py-4"
+            >
+              Visit Official Production Website
+            </Link>
           </div>
         </div>
       </div>
@@ -254,7 +259,9 @@ export default function JackpotTwinsPage() {
               on what&apos;s next.
             </p>
             <div className="mt-8">
-              <NewsletterSignup showNameFields={true} />
+              <SignupButton className="px-8 py-4 bg-accent hover:bg-accent/90 text-white text-lg font-bold uppercase tracking-wide rounded-lg transition-all inline-flex items-center gap-2">
+                Sign Up
+              </SignupButton>
             </div>
           </div>
         </div>
