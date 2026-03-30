@@ -6,22 +6,24 @@ Public website for The Company Theatre showcasing the company's history, product
 ## 👤 For Whom
 The Company Theatre's public audience — theatregoers, press, industry professionals.
 
-## 🏗️ Current State (Feb 21, 2026)
-**Status:** Built, NOT yet deployed
+## 🏗️ Current State (Mar 29, 2026)
+**Status:** Philip-reviewed, NOT yet pushed/deployed. 4+ commits ahead of origin.
 **Repo:** https://github.com/philipriccio/company-theatre-website
 **Local:** `/workspace/projects/company-theatre-website/`
 
 ### What's Built
-- Homepage with company info
+- Homepage with company info + midnight auto-reveal (March 31 00:00 EST)
+- Homepage reveal: full poster, "COMING 2027" overlay (Impact font), red "More Info" button → /jackpot-twins
+- /jackpot-twins production page: poster, about, cast/creatives tabs, ticket CTAs
 - Production history (13 shows since 2004)
-- About page
-- Contact page
+- About page, Contact page
+- CRM signup modal integration
 - Responsive design
 
 ### Pending
-- Domain setup / hosting
-- Final content review with Philip
-- Launch coordination with Jackpot Twins announcement
+- [ ] **Full responsive audit** — all device sizes before Tuesday March 31 (Philip requested)
+- [ ] Push to origin + deploy via Coolify
+- [ ] Final content review pass
 
 ## 📜 History
 

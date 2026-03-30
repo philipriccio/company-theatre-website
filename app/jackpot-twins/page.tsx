@@ -102,11 +102,13 @@ export default function JackpotTwinsPage() {
           />
         </div>
 
-        {/* Title & Details below poster */}
+        {/* Details below poster */}
         <div className="bg-black container-main px-6 py-8 md:py-12 text-center">
-          <h1 className="heading-xl text-white mb-4">Jackpot Twins</h1>
           <p className="text-white/80 text-lg md:text-xl font-medium">
-            by Philip Riccio · March 9–28, 2027 · CAA Theatre, Toronto
+            A new comedy by Philip Riccio · March 9–28, 2027 · CAA Theatre, Toronto
+          </p>
+          <p className="mt-3 text-white/50 text-sm md:text-base font-semibold uppercase tracking-wide">
+            David and Hannah Mirvish and The Company Theatre Present
           </p>
           <div className="mt-8">
             <Link
@@ -190,7 +192,7 @@ export default function JackpotTwinsPage() {
                     <div>
                       <p className="text-sm text-gray-500 uppercase tracking-wide">Presented by</p>
                       <p className="font-medium">
-                        David and Hannah Mirvish and The Company Theatre
+                        David and Hannah Mirvish and The Company Theatre Present
                       </p>
                     </div>
                   </div>
@@ -218,51 +220,26 @@ export default function JackpotTwinsPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Tickets Section */}
       <section className="section-padding bg-gray-50 text-center">
         <div className="container-main max-w-4xl">
-          <h3 className="heading-lg">Don&apos;t miss it</h3>
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-gray-600 md:text-lg">
-            Tickets are available through Mirvish Productions. Visit the official Jackpot Twins
-            site for the full announcement, cast bios, and creative details.
+          <h3 className="heading-lg">Get Your Tickets</h3>
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-gray-700 md:text-lg">
+            Tickets are available now through an Off&nbsp;Mirvish Season Subscription.
+            Or sign up to be the first to know when single tickets go on sale.
           </p>
           <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
             <Link
-              href="https://jackpottwins.ca"
+              href="https://mirvish.com/subscriptions"
               target="_blank"
               rel="noreferrer"
-              className="btn-primary"
+              className="inline-flex items-center justify-center bg-black hover:bg-black/85 text-white text-lg font-bold uppercase tracking-wide px-10 py-4 transition-colors"
             >
-              Visit jackpottwins.ca
+              Subscribe at Mirvish.com
             </Link>
-            <Link
-              href="https://mirvish.com"
-              target="_blank"
-              rel="noreferrer"
-              className="btn-secondary"
-            >
-              Get Tickets at Mirvish
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Newsletter */}
-      <section className="section-padding bg-white">
-        <div className="container-main max-w-4xl">
-          <div className="border border-black bg-black px-6 py-10 text-center shadow-[12px_12px_0_0_#ff3b1d] md:px-10 md:py-12">
-            <h3 className="text-2xl font-bold uppercase tracking-[0.05em] text-white md:text-3xl">
-              Stay in the loop
-            </h3>
-            <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-white/72 md:text-lg">
-              Join our mailing list for ticket updates, behind-the-scenes content, and first word
-              on what&apos;s next.
-            </p>
-            <div className="mt-8">
-              <SignupButton className="px-8 py-4 bg-accent hover:bg-accent/90 text-white text-lg font-bold uppercase tracking-wide rounded-lg transition-all inline-flex items-center gap-2">
-                Sign Up
-              </SignupButton>
-            </div>
+            <SignupButton className="inline-flex items-center justify-center bg-[#E8272A] hover:bg-[#cc2224] text-white text-lg font-bold uppercase tracking-wide px-10 py-4 transition-colors">
+              Single Ticket Notification
+            </SignupButton>
           </div>
         </div>
       </section>

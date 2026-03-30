@@ -51,37 +51,29 @@ export function JackpotTwinsTeaserSection() {
 
 export function JackpotTwinsHomepageAnnouncement() {
   return (
-    <section id="current" className="relative overflow-hidden bg-black pt-20 text-white">
-      <div className="absolute inset-0">
+    <section id="current" className="bg-black pt-20 text-white">
+      {/* Poster — full width, no filter, no crop */}
+      <div className="relative w-full">
         <Image
-          src="/images/jackpot-twins/poster-web-1800x750.jpg"
+          src="/images/jackpot-twins/poster-web-1800x1200.jpg"
           alt="Jackpot Twins campaign artwork"
-          fill
+          width={1800}
+          height={1200}
           priority
           sizes="100vw"
-          className="object-cover object-center"
+          className="w-full h-auto"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/72 to-black/30" />
-      </div>
-
-      <div className="container-main relative z-10 flex min-h-[min(100vh,920px)] items-end py-16 md:py-20">
-        <div className="max-w-4xl">
-          <p className="mb-5 text-sm font-bold uppercase tracking-[0.24em] text-accent">World Premiere · Spring 2027</p>
-          <h2 className="heading-xl text-white">Jackpot Twins</h2>
-          <p className="mt-5 max-w-3xl text-xl leading-relaxed text-white/80 md:text-3xl">
-            A new comedy by Philip Riccio
+        {/* Overlay: Coming 2027 + More Info — bottom right, mirroring tagline position */}
+        <div className="absolute bottom-[3%] right-[3%] md:bottom-[4%] md:right-[4%] flex flex-col items-center gap-2 md:gap-3">
+          <p className="text-xl font-black uppercase tracking-[0.08em] text-white md:text-3xl lg:text-4xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]" style={{ fontFamily: "Impact, 'Arial Narrow', sans-serif" }}>
+            Coming 2027
           </p>
-          <p className="mt-6 text-sm font-semibold uppercase tracking-[0.18em] text-white/60 md:text-base">
-            CAA Theatre · Toronto · In association with Mirvish Productions
-          </p>
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-            <Link href="https://jackpottwins.ca" target="_blank" rel="noreferrer" className="btn-primary">
-              Visit jackpottwins.ca
-            </Link>
-            <Link href="/jackpot-twins" className="btn-secondary border-white text-white hover:bg-white hover:text-black">
-              Production Details
-            </Link>
-          </div>
+          <Link
+            href="/jackpot-twins"
+            className="inline-flex items-center justify-center bg-[#E8272A] hover:bg-[#cc2224] text-white text-sm md:text-base font-bold uppercase tracking-[0.1em] px-6 py-2.5 md:px-10 md:py-3.5 shadow-[0_3px_16px_rgba(0,0,0,0.5)] transition-colors"
+          >
+            More Info
+          </Link>
         </div>
       </div>
     </section>
