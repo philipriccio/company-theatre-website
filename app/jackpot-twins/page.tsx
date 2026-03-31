@@ -214,7 +214,7 @@ export default function JackpotTwinsPage() {
       </section>
 
       {/* Cast & Creatives */}
-      <section className="section-padding bg-white">
+      <section className="pt-16 pb-8 md:pt-20 md:pb-12 bg-white">
         <div className="container-main">
           <h2 className="heading-lg mb-0">Cast & Creatives</h2>
           <CastCreativesTabs cast={cast} crew={crew} />
