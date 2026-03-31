@@ -688,11 +688,11 @@ export const currentProduction: Production = {
   venue: "CAA Theatre — 651 Yonge St",
   synopsis: "A sharp-witted, irreverent new comedy about the heavy price of getting everything you ever wanted. Canadian theatre legends Seana McKenna and Nora McLellan lead an all-star cast in this world premiere co-production with Mirvish Productions.",
   cast: [
-    { name: "Seana McKenna" },
-    { name: "Nora McLellan" },
-    { name: "Tony Nappo" },
-    { name: "Colin A Doyle" },
-    { name: "Caroline Toal" },
+    { actor: "Seana McKenna" },
+    { actor: "Nora McLellan" },
+    { actor: "Tony Nappo" },
+    { actor: "Colin A Doyle" },
+    { actor: "Caroline Toal" },
   ],
   crew: [
     { role: "Written & Directed by", name: "Philip Riccio" },
