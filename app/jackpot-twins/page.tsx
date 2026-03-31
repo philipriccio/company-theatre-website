@@ -63,6 +63,7 @@ const cast: CastMember[] = [
 
 const crew: CrewMember[] = [
   { role: "Written & Directed by", name: "Philip Riccio" },
+  { role: "Producer", name: "Janice Peters Gibson" },
   { role: "Set Design", name: "Anahita Dehbonehie" },
   { role: "Lighting Design", name: "Kevin Lamotte" },
 ];

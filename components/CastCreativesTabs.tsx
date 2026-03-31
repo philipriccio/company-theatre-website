@@ -44,7 +44,7 @@ export default function CastCreativesTabs({ cast, crew }: CastCreativesTabsProps
       {/* Content */}
       <div className="p-6">
         {activeTab === "cast" ? (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
             {cast.map((member, index) => (
               <div key={index}>
                 {/* Headshot - static image only */}
