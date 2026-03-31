@@ -24,7 +24,8 @@ export const metadata: Metadata = {
     "theatre", "Toronto theatre", "Company Theatre", "live performance", 
     "plays", "Philip Riccio", "Allan Hawco", "Kim Coates", "Jerusalem play",
     "Toronto plays", "Canadian theatre", "Dora Award", "independent theatre",
-    "drama Toronto", "stage productions"
+    "drama Toronto", "stage productions", "Jackpot Twins", "Seana McKenna",
+    "Nora McLellan", "CAA Theatre", "Mirvish", "world premiere", "new comedy"
   ],
   authors: [{ name: "The Company Theatre" }],
   creator: "The Company Theatre",
@@ -41,10 +42,10 @@ export const metadata: Metadata = {
     siteName: theatreInfo.name,
     images: [
       {
-        url: "/images/show-jerusalem-001.jpg",
+        url: "/images/jackpot-twins/poster-web-1200x630.jpg",
         width: 1200,
         height: 630,
-        alt: "The Company Theatre - Jerusalem production",
+        alt: "Jackpot Twins — A New Comedy by Philip Riccio. Coming Spring 2027.",
       },
     ],
     locale: "en_CA",
@@ -56,7 +57,7 @@ export const metadata: Metadata = {
     description: "Twenty years of fearless theatre. World-class actors. Stories that stay with you.",
     site: "@companytheatre",
     creator: "@companytheatre",
-    images: ["/images/show-jerusalem-001.jpg"],
+    images: ["/images/jackpot-twins/poster-web-1200x630.jpg"],
   },
   robots: {
     index: true,

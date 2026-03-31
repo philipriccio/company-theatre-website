@@ -21,10 +21,10 @@ export const theatreInfo = {
   },
   about: {
     whoWeAre: "Since 2005, The Company Theatre has been bringing bold, uncompromising stories to Toronto stages. We hunt down the most electrifying plays from around the world and put them in the hands of Canada's finest actors.",
-    mission: "No gimmicks. No safety nets. Just raw, authentic performances that unfold differently every single night. When the lights come up, anything can happen—and that's exactly the point.",
+    mission: "No gimmicks. No safety nets. Just raw, authentic performances that unfold differently every single night. When the lights come up, anything can happen-and that's exactly the point.",
     approach: "Think of it as prestige television, but live and breathing in front of you. We're drawn to stories that dig into the messy, complicated, thrilling parts of being human. The kind of nights that stay with you long after you leave the theatre.",
     stats: "13 productions. 15+ awards. Two decades of theatre that critics have called 'one of the best things ever seen in Toronto.'",
-    venue: "We don't have a permanent home—we partner with theatres across Toronto and beyond, bringing our work wherever the right stage awaits."
+    venue: "We don't have a permanent home-we partner with theatres across Toronto and beyond, bringing our work wherever the right stage awaits."
   }
 };
 
@@ -71,10 +71,10 @@ export const productions: Production[] = [
     title: "Things I Know to be True",
     playwright: "Andrew Bovell",
     director: "Philip Riccio",
-    dates: "February 1 – February 26, 2023",
-    venue: "CAA Theatre — 651 Yonge St",
+    dates: "February 1 - February 26, 2023",
+    venue: "CAA Theatre - 651 Yonge St",
     partnership: "Mirvish Productions",
-    synopsis: "A heart-wrenching and uplifting journey of a family struggling to stay together in a rapidly changing world. Things I Know to be True is the story of a year in the life of the Price family. Bob, recently let go from his job at a car factory, and Fran, a registered nurse, have raised their four children — Pip, Mia, Ben, and Rosie — the best they could. But a parent's job is never finished, and as the seasons change Bob and Fran find themselves guiding and supporting their children as they each face life-altering changes that shake the foundation of the once-stable family home.",
+    synopsis: "A heart-wrenching and uplifting journey of a family struggling to stay together in a rapidly changing world. Things I Know to be True is the story of a year in the life of the Price family. Bob, recently let go from his job at a car factory, and Fran, a registered nurse, have raised their four children - Pip, Mia, Ben, and Rosie - the best they could. But a parent's job is never finished, and as the seasons change Bob and Fran find themselves guiding and supporting their children as they each face life-altering changes that shake the foundation of the once-stable family home.",
     cast: [
       { role: "Bob", actor: "Tom McCamus", headshot: "/images/cast/cast-055-tom-mccamus.jpg" },
       { role: "Fran", actor: "Seana McKenna", headshot: "/images/cast/cast-051-seana-mckenna.jpg" },
@@ -124,7 +124,7 @@ export const productions: Production[] = [
     title: "Jerusalem",
     playwright: "Jez Butterworth",
     director: "Mitchell Cushman",
-    dates: "February 13 – March 17, 2018",
+    dates: "February 13 - March 17, 2018",
     venue: "Streetcar Crowsnest",
     partnership: "Outside the March and The Company Theatre co-production in association with Starvox Entertainment",
     synopsis: "The Company Theatre's production of Jerusalem in 2018, starring Kim Coates (Bad Blood, Sons of Anarchy) was an award-winning success. Johnny 'Rooster' Byron, local waster and modern-day Pied Piper, is a wanted man. The council want to evict him; his son wants him to take him to the fair; Troy Whitworth wants to give him a serious kicking; and the villagers want to celebrate St George's Day with a dance around his maypole. But Rooster has other plans.",
@@ -293,7 +293,7 @@ export const productions: Production[] = [
     title: "Domesticated",
     playwright: "Bruce Norris",
     director: "Philip Riccio",
-    dates: "November 17 – December 20, 2015",
+    dates: "November 17 - December 20, 2015",
     venue: "Berkeley Street Theatre",
     partnership: "Canadian Stage co-production",
     synopsis: "TCT and Canadian Stage closed their partnership with a production of Bruce Norris's Domesticated. The play starred Paul Gross and Martha Burns, alongside a cast of nine other actors, in what was TCT's largest ensemble production since 2008's Festen. Due to the popularity of the production, Domesticated ran for an extended, completely sold-out fifth week. Bill Pulver is a politician in crisis mode. A scandalous incident in a hotel room has left his wife Judy publicly humiliated and his political career in jeopardy. As the couple navigates the fallout in front of an unrelenting media circus, Bruce Norris weaves a scathing and hilarious examination of gender politics, power, and public perception.",
@@ -357,7 +357,7 @@ export const productions: Production[] = [
     title: "The Seagull",
     playwright: "Anton Chekhov",
     director: "Chris Abraham",
-    dates: "January 11 – February 8, 2015",
+    dates: "January 11 - February 8, 2015",
     venue: "Berkeley Street Theatre",
     partnership: "A Crow's Theatre production in association with Canadian Stage and The Company Theatre",
     adaptation: "Robert Falls adaptation, translated by George Calderon",
@@ -402,7 +402,7 @@ export const productions: Production[] = [
     title: "Belleville",
     playwright: "Amy Herzog",
     director: "Jason Byrne",
-    dates: "April 6 – May 4, 2014",
+    dates: "April 6 - May 4, 2014",
     venue: "Berkeley Street Theatre",
     partnership: "In association with Canadian Stage",
     synopsis: "Co-Artistic Director and co-founder Allan Hawco returned to the stage after a five-year hiatus to perform in Amy Herzog's Belleville. He worked alongside TCT ensemble member Christine Horne, as well as newcomers Dalmar Abuzied and Marsha Regis. A young American couple, Zack and Abby, have fled the uncertainties of post-9/11 America to forge a new life in the idyllic streets of Belleville, Paris. But as the cracks in their relationship begin to show, their downstairs neighbours Alioune and Amina become unwilling witnesses to a psychological unravelling that will leave no one untouched.",
@@ -453,7 +453,7 @@ export const productions: Production[] = [
     title: "Speaking in Tongues",
     playwright: "Andrew Bovell",
     director: "Philip Riccio",
-    dates: "October 29 – November 24, 2012",
+    dates: "October 29 - November 24, 2012",
     venue: "Berkeley Street Theatre",
     partnership: "In association with Canadian Stage",
     synopsis: "Australian playwright Andrew Bovell's Speaking in Tongues saw the stage debut of acclaimed Australian-Canadian actor Helene Joy. After a successful run in 2012, TCT re-mounted the show at the Belfry Theatre in Victoria, BC, in January 2013. Nine parallel lives intersect in this haunting and seductive puzzle about love, betrayal, and the choices we make. A woman disappears. A marriage falters. A stranger returns home. In a dance of interconnected stories spanning years and continents, Bovell crafts a meditation on the mysteries of human connection.",
@@ -502,7 +502,7 @@ export const productions: Production[] = [
     title: "The Test",
     playwright: "Lukas Bärfuss",
     director: "Jason Byrne",
-    dates: "October 31 – November 26, 2011",
+    dates: "October 31 - November 26, 2011",
     year: 2011,
     venue: "Berkeley Street Theatre, Toronto",
     partnership: "In association with Canadian Stage",
@@ -546,7 +546,7 @@ export const productions: Production[] = [
     title: "Through the Leaves",
     playwright: "Franz Xaver Kroetz",
     director: "Philip Riccio",
-    dates: "September 10 – October 3, 2010",
+    dates: "September 10 - October 3, 2010",
     year: 2010,
     venue: "Tarragon Theatre Extra Space, Toronto",
     synopsis: "Through the Leaves by German playwright Franz Xaver Kroetz was a landmark production for The Company Theatre, earning four Dora Mavor Moore Awards. The powerful two-hander explored the complex relationship between Martha, a butcher, and Otto, a labourer, in a raw and unflinching portrayal of loneliness and human connection. A moving performance in a bleak, cold, dark play that examines the difficulty of intimacy between two wounded souls.",
@@ -579,7 +579,7 @@ export const productions: Production[] = [
     title: "Festen",
     playwright: "David Eldridge",
     director: "Jason Byrne",
-    dates: "November 17 – December 13, 2008",
+    dates: "November 17 - December 13, 2008",
     year: 2008,
     venue: "Berkeley Street Theatre, Toronto",
     synopsis: "Festen was The Company Theatre's largest ensemble production until Domesticated in 2015. Based on the acclaimed Dogme 95 film by Thomas Vinterberg, Mogens Rukov and Bo Hr. Hansen, this powerful drama unfolds at a family celebration where dark secrets are revealed, shattering the facade of a respected Danish family. A searing examination of family, truth, and the cost of silence.",
@@ -625,7 +625,7 @@ export const productions: Production[] = [
     title: "A Whistle in the Dark",
     playwright: "Tom Murphy",
     director: "Jason Byrne",
-    dates: "January 13 – February 5, 2005",
+    dates: "January 13 - February 5, 2005",
     year: 2005,
     venue: "Berkeley Street Theatre, Toronto",
     synopsis: "A Whistle in the Dark was The Company Theatre's debut production. Described by the National Post as 'one of the best things ever seen in Canada,' this powerful Irish drama by Tom Murphy announced The Company Theatre's arrival on Toronto's theatre scene. Settled in Coventry with his new wife Betty, Michael Carney Jr. is attempting to lead a new life. But leaving Ireland couldn't set him free, and once the Carney brothers descend, there's no way out. The production was nominated for the Dora Mavor Moore Award for Outstanding Production and was remounted in 2007 at LSPU Hall in Newfoundland and Toronto's Young Centre for the Performing Arts.",
@@ -680,18 +680,29 @@ export const productions: Production[] = [
 
 // Current/upcoming production (public teaser only until official announcement)
 export const currentProduction: Production = {
-  id: "next-production",
-  title: "Our Next Production",
-  playwright: "To Be Announced",
-  director: "To Be Announced",
-  dates: "Announcement coming soon",
-  venue: "Toronto, Canada",
-  synopsis: "Something extraordinary is in the works. We’re preparing our most ambitious production yet with some of Canada’s best actors. Join the mailing list to be first to know when we announce.",
-  cast: [],
-  crew: [],
-  images: [],
+  id: "jackpot-twins",
+  title: "Jackpot Twins",
+  playwright: "Philip Riccio",
+  director: "Philip Riccio",
+  dates: "March 9 – March 28, 2027",
+  venue: "CAA Theatre — 651 Yonge St",
+  synopsis: "A sharp-witted, irreverent new comedy about the heavy price of getting everything you ever wanted. Canadian theatre legends Seana McKenna and Nora McLellan lead an all-star cast in this world premiere co-production with Mirvish Productions.",
+  cast: [
+    { name: "Seana McKenna" },
+    { name: "Nora McLellan" },
+    { name: "Tony Nappo" },
+    { name: "Colin A Doyle" },
+    { name: "Caroline Toal" },
+  ],
+  crew: [
+    { role: "Written & Directed by", name: "Philip Riccio" },
+    { role: "Producer", name: "Janice Peters Gibson" },
+    { role: "Set Design", name: "Anahita Dehbonehie" },
+    { role: "Lighting Design", name: "Kevin Lamotte" },
+  ],
+  images: ["/images/jackpot-twins/poster-web-1800x1200.jpg"],
   status: "current",
-  lastUpdated: "2026-03-01"
+  lastUpdated: "2026-03-31"
 };
 
 // Historical productions for reference
