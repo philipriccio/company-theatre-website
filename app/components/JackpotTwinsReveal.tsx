@@ -4,7 +4,7 @@ import { SignupButton } from "@/components/SignupModal";
 
 type SearchParams = Record<string, string | string[] | undefined>;
 
-const REVEAL_AT = new Date("2026-03-31T00:00:00-05:00");
+const REVEAL_AT = new Date("2026-03-31T00:00:00-04:00");
 
 export function shouldRevealJackpotTwins(searchParams?: SearchParams) {
   const revealParam = searchParams?.reveal;
@@ -22,7 +22,7 @@ export function JackpotTwinsTeaserSection() {
             <span className="status-badge">Coming Soon</span>
             <h2 className="heading-xl mt-8">Our Next Production</h2>
             <p className="mt-5 text-xs font-semibold uppercase tracking-[0.2em] text-accent md:text-sm">
-              Announcement · March 31, 2026 · Midnight EST
+              Announcement · March 31, 2026 · Midnight EDT
             </p>
             <p className="body-lg mt-6 text-gray-700">
               Something extraordinary is on deck. We&apos;re preparing a new production with some of Canada&apos;s

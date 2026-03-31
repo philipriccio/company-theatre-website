@@ -6,7 +6,7 @@ import {
   JackpotTwinsTeaserSection,
 } from "@/app/components/JackpotTwinsReveal";
 
-const REVEAL_TIME = new Date("2026-03-31T00:00:00-05:00").getTime();
+const REVEAL_TIME = new Date("2026-03-31T00:00:00-04:00").getTime();
 
 export default function UpcomingProductionSection({
   initialRevealed,
