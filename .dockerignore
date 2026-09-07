@@ -1,0 +1,14 @@
+.git
+.github
+.next
+node_modules
+dist
+website
+deploy-files
+scraped-content
+coverage
+*.log
+*.pem
+*.tsbuildinfo
+.env*
+knowledge-graph.json
