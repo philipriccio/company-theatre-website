@@ -73,6 +73,7 @@ export default function Footer() {
               <li><Link href="/#current" className="footer-link text-white/70 hover:text-white">Current Production</Link></li>
               <li><Link href="/#productions" className="footer-link text-white/70 hover:text-white">Past Productions</Link></li>
               <li><Link href="/#about" className="footer-link text-white/70 hover:text-white">About Us</Link></li>
+              <li><Link href="/support" className="footer-link text-white/70 hover:text-white">Support Us</Link></li>
             </ul>
           </div>
           

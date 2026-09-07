@@ -33,6 +33,9 @@ export default function Navigation() {
           <Link href="/#about" className="nav-link text-white/80 hover:text-white">
             About
           </Link>
+          <Link href="/support" className="nav-link text-white/80 hover:text-white">
+            Support
+          </Link>
           <Link href="/#contact" className="nav-link text-white/80 hover:text-white">
             Contact
           </Link>
@@ -66,6 +69,13 @@ export default function Navigation() {
               onClick={closeMenu}
             >
               About
+            </Link>
+            <Link
+              href="/support"
+              className="nav-link text-white/80 hover:text-white py-2"
+              onClick={closeMenu}
+            >
+              Support
             </Link>
             <Link 
               href="/#contact" 
