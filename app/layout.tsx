@@ -42,9 +42,9 @@ export const metadata: Metadata = {
     siteName: theatreInfo.name,
     images: [
       {
-        url: "/images/jackpot-twins/poster-web-1200x630.jpg",
-        width: 1200,
-        height: 630,
+        url: "/images/jackpot-twins/title-card.png",
+        width: 1536,
+        height: 1024,
         alt: "Jackpot Twins — A New Comedy by Philip Riccio. Coming Spring 2027.",
       },
     ],
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     description: "Twenty years of fearless theatre. World-class actors. Stories that stay with you.",
     site: "@companytheatre",
     creator: "@companytheatre",
-    images: ["/images/jackpot-twins/poster-web-1200x630.jpg"],
+    images: ["/images/jackpot-twins/title-card.png"],
   },
   robots: {
     index: true,

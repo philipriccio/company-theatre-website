@@ -700,7 +700,7 @@ export const currentProduction: Production = {
     { role: "Set Design", name: "Anahita Dehbonehie" },
     { role: "Lighting Design", name: "Kevin Lamotte" },
   ],
-  images: ["/images/jackpot-twins/poster-web-1800x1200.jpg"],
+  images: ["/images/jackpot-twins/title-card.png"],
   status: "current",
   lastUpdated: "2026-03-31"
 };

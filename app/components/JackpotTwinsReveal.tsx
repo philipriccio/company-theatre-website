@@ -52,29 +52,31 @@ export function JackpotTwinsTeaserSection() {
 export function JackpotTwinsHomepageAnnouncement() {
   return (
     <section id="current" className="bg-black pt-20 text-white">
-      {/* Poster — full width, no filter, no crop */}
+      {/* Title card — full width, no filter, no crop */}
       <div className="relative w-full">
         <Image
-          src="/images/jackpot-twins/poster-web-1800x1200.jpg"
-          alt="Jackpot Twins campaign artwork"
-          width={1800}
-          height={1200}
+          src="/images/jackpot-twins/title-card.png"
+          alt="Jackpot Twins — A New Comedy by Philip Riccio"
+          width={1536}
+          height={1024}
           priority
           sizes="100vw"
           className="w-full h-auto"
         />
-        {/* Overlay: Coming 2027 + More Info — bottom right, mirroring tagline position */}
-        <div className="absolute bottom-[3%] right-[3%] md:bottom-[4%] md:right-[4%] flex flex-col items-center gap-2 md:gap-3">
-          <p className="text-xl font-black uppercase tracking-[0.08em] text-white md:text-3xl lg:text-4xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]" style={{ fontFamily: "Impact, 'Arial Narrow', sans-serif" }}>
-            Coming 2027
-          </p>
-          <Link
-            href="/jackpot-twins"
-            className="inline-flex items-center justify-center bg-[#E8272A] hover:bg-[#cc2224] text-white text-sm md:text-base font-bold uppercase tracking-[0.1em] px-6 py-2.5 md:px-10 md:py-3.5 shadow-[0_3px_16px_rgba(0,0,0,0.5)] transition-colors"
-          >
-            More Info
-          </Link>
-        </div>
+      </div>
+      <div className="flex flex-col items-center justify-center gap-4 bg-black px-6 py-7 sm:flex-row sm:gap-8 md:py-9">
+        <p
+          className="text-2xl font-black uppercase tracking-[0.08em] text-white md:text-3xl"
+          style={{ fontFamily: "Impact, 'Arial Narrow', sans-serif" }}
+        >
+          Coming 2027
+        </p>
+        <Link
+          href="/jackpot-twins"
+          className="inline-flex items-center justify-center bg-[#E8272A] hover:bg-[#cc2224] text-white text-sm md:text-base font-bold uppercase tracking-[0.1em] px-8 py-3 md:px-10 md:py-3.5 transition-colors"
+        >
+          More Info
+        </Link>
       </div>
     </section>
   );

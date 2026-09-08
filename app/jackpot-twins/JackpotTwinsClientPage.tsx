@@ -128,8 +128,8 @@ export default function JackpotTwinsClientPage() {
                 <div className="w-full max-w-[440px] border border-white/10 bg-[#0a0a0a] p-3 shadow-[0_24px_70px_rgba(0,0,0,0.45)] md:p-4">
                   <div className="relative aspect-[5/8] w-full bg-black">
                     <Image
-                      src="/images/jackpot-twins/poster-5x8-web.jpg"
-                      alt="Jackpot Twins portrait poster"
+                      src="/images/jackpot-twins/title-card.png"
+                      alt="Jackpot Twins — A New Comedy by Philip Riccio"
                       fill
                       priority
                       sizes="(max-width: 1024px) 100vw, 40vw"
@@ -286,11 +286,11 @@ export default function JackpotTwinsClientPage() {
           <div className="container-main grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <div className="relative min-h-[420px] overflow-hidden border border-white/10 bg-white/[0.04]">
               <Image
-                src="/images/jackpot-twins/poster-5x8-web.jpg"
-                alt="Jackpot Twins portrait poster"
+                src="/images/jackpot-twins/title-card.png"
+                alt="Jackpot Twins — A New Comedy by Philip Riccio"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"
-                className="object-cover"
+                className="object-contain"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
             </div>

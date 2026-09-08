@@ -19,10 +19,10 @@ export const metadata: Metadata = {
     type: "article",
     images: [
       {
-        url: "https://companytheatre.ca/images/jackpot-twins/poster-web-1200x630.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Jackpot Twins",
+        url: "https://companytheatre.ca/images/jackpot-twins/title-card.png",
+        width: 1536,
+        height: 1024,
+        alt: "Jackpot Twins — A New Comedy by Philip Riccio",
       },
     ],
   },
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: "Jackpot Twins | The Company Theatre",
     description:
       "World premiere of Jackpot Twins, a new comedy by Philip Riccio. March 2027 at CAA Theatre, Toronto.",
-    images: ["https://companytheatre.ca/images/jackpot-twins/poster-web-1200x630.jpg"],
+    images: ["https://companytheatre.ca/images/jackpot-twins/title-card.png"],
   },
   alternates: {
     canonical: "https://companytheatre.ca/jackpot-twins",
@@ -94,10 +94,10 @@ export default function JackpotTwinsPage() {
         {/* Hero Image — poster displayed clean, no overlay */}
         <div className="relative bg-black">
           <Image
-            src="/images/jackpot-twins/poster-web-1800x1200.jpg"
-            alt="Jackpot Twins"
-            width={1800}
-            height={1200}
+            src="/images/jackpot-twins/title-card.png"
+            alt="Jackpot Twins — A New Comedy by Philip Riccio"
+            width={1536}
+            height={1024}
             className="w-full h-auto"
             priority
           />
