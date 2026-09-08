@@ -1,6 +1,6 @@
 # Company Theatre Website — Project Overview
 
-*Last updated: 2026-09-07 7:45 PM EST by Mildred*
+*Last updated: 2026-09-07 8:58 PM EST by Mildred*
 
 ## 🎯 Vision
 Public website for The Company Theatre showcasing the company's history, productions, and upcoming shows.
@@ -59,7 +59,8 @@ Fixed responsive text wrapping in AnimatedQuotes component.
 - Updated the homepage announcement, `/jackpot-twins`, current-production data, Open Graph, and Twitter references. Removed the six old poster variants.
 - Moved the homepage `Coming 2027` / `More Info` CTA below the image after mobile proof showed the old overlay obscured the new title.
 - Philip approved the replacement. Release commit `13a1083` was pushed to `main` and `stable-deploy`; Coolify deployment `gm8j8fe04z30smwaqy3ixxa6` finished successfully on Docker image `vkw0c4wso0g4cg00oo8wok48:13a108380c2c7f24323476490ae8cac483fdba52`.
-- Live proof passed: `/`, `/jackpot-twins`, and `title-card.png` return 200; the removed poster URL returns 404; rendered markup contains one 1536×1024 title card and no stale poster references; desktop 1440×1000 and mobile 390×844 screenshots show clean, uncropped art, the separate homepage CTA strip, and no horizontal overflow.
+- Initial live proof passed: `/`, `/jackpot-twins`, and `title-card.png` returned 200; the removed poster URL returned 404 before the search-image cleanup below; rendered markup contained one 1536×1024 title card and no stale poster references; desktop 1440×1000 and mobile 390×844 screenshots showed clean, uncropped art, the separate homepage CTA strip, and no horizontal overflow.
+- Search-image cleanup released in `402a6ad` via Coolify deployment `l9bibx6glkhg7xqov6a05jug`. All six retired Jackpot Twins poster URLs now return permanent `308` redirects to `title-card.png`; following each redirect returns the approved PNG with an exact byte-for-byte match to the repository asset. Live page, Open Graph, and Twitter metadata contain only `title-card.png`, and a public search check found no indexed Company Theatre result for the retired `poster-web` paths. Search-engine thumbnail caches remain outside site control and may take time to refresh.
 
 ## ⚠️ Design Rules
 - **Contractual billing (NEVER FORGET):** "David and Hannah Mirvish and The Company Theatre Present" — per Section 4 of Mirvish agreement
