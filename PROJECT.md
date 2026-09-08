@@ -1,6 +1,6 @@
 # Company Theatre Website — Project Overview
 
-*Last updated: 2026-09-07 5:56 PM EST by Mildred*
+*Last updated: 2026-09-07 7:45 PM EST by Mildred*
 
 ## 🎯 Vision
 Public website for The Company Theatre showcasing the company's history, productions, and upcoming shows.
@@ -53,8 +53,16 @@ Fixed responsive text wrapping in AnimatedQuotes component.
 - Released in `4084acc` with deployment hardening in `090cb23`. The first Coolify run `agmyh2j8i7ndro4o3h0x5i1v` failed after a successful Next build because Nixpacks left a Unix socket in the Nix layer that Docker could not export. Replaced Nixpacks with a multi-stage standalone Next.js Dockerfile and `.dockerignore`; changed only this Coolify app's build pack from `nixpacks` to `dockerfile` (`/Dockerfile`). Corrective deployment `pbjd5oo90trs1ds4ok873r87` finished successfully on image `vkw0c4wso0g4cg00oo8wok48:090cb231a4c78eea5a5a610951567292465d6cea`.
 - Live proof passed: `/`, `/support`, and sitemap return 200; desktop and mobile layouts render cleanly; mobile-menu navigation reaches `/support`; iframe points to CanadaHelps form `2896`; `1. The Company Theatre` is selected by default and the Diane Mugford/Carl Steiss Legacy Fund remains available. CanadaHelps emits a benign cross-origin console access warning from inside its own iframe, but the form renders and functions.
 
+### Sep 7, 2026 — Jackpot Twins Interim Key Art (Live)
+- Philip asked to remove the AI-generated two-women campaign artwork from the Company Theatre site and use a temporary title-only card.
+- Generated `public/images/jackpot-twins/title-card.png` at 1536×1024. Philip's second-pass direction is now applied: exact flat Plinko pink `#E8308A`, Plinko blue `#5BB8E8` for `JACKPOT TWINS`, pure white for `A NEW COMEDY BY PHILIP RICCIO`, and `TWINS` optically centred beneath `JACKPOT`; no people or additional imagery. The final raster was flattened to remove generated gradients, shadows, and rough letter edges.
+- Updated the homepage announcement, `/jackpot-twins`, current-production data, Open Graph, and Twitter references. Removed the six old poster variants.
+- Moved the homepage `Coming 2027` / `More Info` CTA below the image after mobile proof showed the old overlay obscured the new title.
+- Philip approved the replacement. Release commit `13a1083` was pushed to `main` and `stable-deploy`; Coolify deployment `gm8j8fe04z30smwaqy3ixxa6` finished successfully on Docker image `vkw0c4wso0g4cg00oo8wok48:13a108380c2c7f24323476490ae8cac483fdba52`.
+- Live proof passed: `/`, `/jackpot-twins`, and `title-card.png` return 200; the removed poster URL returns 404; rendered markup contains one 1536×1024 title card and no stale poster references; desktop 1440×1000 and mobile 390×844 screenshots show clean, uncropped art, the separate homepage CTA strip, and no horizontal overflow.
+
 ## ⚠️ Design Rules
 - **Contractual billing (NEVER FORGET):** "David and Hannah Mirvish and The Company Theatre Present" — per Section 4 of Mirvish agreement
 - **Tickets messaging:** "Tickets are available now through an Off Mirvish Season Subscription. Or sign up to be the first to know when single tickets go on sale."
-- Match existing visual language from poster/artwork
+- Interim Jackpot Twins key art is title-only on exact Plinko pink `#E8308A`; do not restore AI-generated people without Philip's direction.
 - Impact font for tagline overlay
