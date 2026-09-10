@@ -74,3 +74,5 @@ Fixed responsive text wrapping in AnimatedQuotes component.
 - Production build passed. Desktop 1440×1000 and mobile 390×844 proof from the standalone production build showed the full title card uncropped with no horizontal overflow.
 - Local development remains affected by the repository's known parent-workspace Tailwind resolution issue; the production build is the reliable proof.
 - Philip approved the verified local release candidate for production deployment on Sep. 10.
+- Released as commit `0c532bf3717fa29732f93041268b32d31d102e0c` through Coolify deployment `l8u9tffxr1k1kbzu03atylc8`; deployment finished successfully with the existing Dockerfile build path.
+- Live proof passed on `/` and `/jackpot-twins`: the served `title-card.png` is byte-for-byte identical to the release asset, desktop and mobile layouts show the new lockup uncropped, and both viewports have zero horizontal overflow.
