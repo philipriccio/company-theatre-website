@@ -67,3 +67,10 @@ Fixed responsive text wrapping in AnimatedQuotes component.
 - **Tickets messaging:** "Tickets are available now through an Off Mirvish Season Subscription. Or sign up to be the first to know when single tickets go on sale."
 - Interim Jackpot Twins key art is title-only on exact Plinko pink `#E8308A`; do not restore AI-generated people without Philip's direction.
 - Impact font for tagline overlay
+
+### Sep 10, 2026 — New Mirvish Title Lockup Release
+- Retrieved Otto Pierre's original transparent `jt-2026-logo-NEW.png` from the Mirvish SharePoint link in his email; verified it as a 2405×1518 RGBA image and preserved the untouched source in `projects/jackpot-twins/assets/`.
+- Rebuilt `public/images/jackpot-twins/title-card.png` on flat pink `#E8308A`, using Otto's silver-and-gold lockup and retaining the white `A NEW COMEDY BY PHILIP RICCIO` byline.
+- Production build passed. Desktop 1440×1000 and mobile 390×844 proof from the standalone production build showed the full title card uncropped with no horizontal overflow.
+- Local development remains affected by the repository's known parent-workspace Tailwind resolution issue; the production build is the reliable proof.
+- Philip approved the verified local release candidate for production deployment on Sep. 10.
