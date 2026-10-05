@@ -64,9 +64,14 @@ Fixed responsive text wrapping in AnimatedQuotes component.
 
 ## ⚠️ Design Rules
 - **Contractual billing (NEVER FORGET):** "David and Hannah Mirvish and The Company Theatre Present" — per Section 4 of Mirvish agreement
-- **Tickets messaging:** "Tickets are available now through an Off Mirvish Season Subscription. Or sign up to be the first to know when single tickets go on sale."
+- **Tickets messaging:** "Tickets are available now through an Off Mirvish Season Subscription. Single tickets go on sale October 9."
 - Interim Jackpot Twins key art is title-only on exact Plinko pink `#E8308A`; do not restore AI-generated people without Philip's direction.
 - Impact font for tagline overlay
+
+### Oct 5, 2026 — Single-Ticket On-Sale Date
+- Updated the `/jackpot-twins` ticket section to state: “Single tickets go on sale October 9.”
+- Preserved the existing Off Mirvish subscription option and single-ticket notification signup.
+- Production build and desktop/mobile visual checks passed with no horizontal overflow.
 
 ### Sep 10, 2026 — New Mirvish Title Lockup Release
 - Retrieved Otto Pierre's original transparent `jt-2026-logo-NEW.png` from the Mirvish SharePoint link in his email; verified it as a 2405×1518 RGBA image and preserved the untouched source in `projects/jackpot-twins/assets/`.

@@ -227,7 +227,7 @@ export default function JackpotTwinsPage() {
           <h3 className="heading-lg">Get Your Tickets</h3>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-gray-700 md:text-lg">
             Tickets are available now through an Off&nbsp;Mirvish Season Subscription.
-            Or sign up to be the first to know when single tickets go on sale.
+            Single tickets go on sale October 9.
           </p>
           <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
             <Link
