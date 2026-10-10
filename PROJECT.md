@@ -81,3 +81,6 @@ Fixed responsive text wrapping in AnimatedQuotes component.
 - Philip approved the verified local release candidate for production deployment on Sep. 10.
 - Released as commit `0c532bf3717fa29732f93041268b32d31d102e0c` through Coolify deployment `l8u9tffxr1k1kbzu03atylc8`; deployment finished successfully with the existing Dockerfile build path.
 - Live proof passed on `/` and `/jackpot-twins`: the served `title-card.png` is byte-for-byte identical to the release asset, desktop and mobile layouts show the new lockup uncropped, and both viewports have zero horizontal overflow.
+
+## October 10 — audience signup repair (local only)
+Consent checkbox/version, fail-closed protected CRM proxy and truthful subscribed/review/error states implemented in isolated worktree. New unsuppressed signups enter CRM with durable consent/source evidence; old no-solicitation remains review-required. Requires CRM intake deployment first plus protected CRM_URL, CRM_AUTH and CRM_WEBSITE_SIGNUP_TOKEN, then edge abuse limits. No fallback credentials. Local production builds/typechecks and real 1440/390/320 browser→HTTP→isolated DB proofs passed. Not deployed. Full cross-repo review: ../crm-signup-release/reports/signup-2026-10-10/REVIEW.md.

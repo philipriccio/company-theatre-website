@@ -1,5 +1,7 @@
 "use client";
 
+import { CONSENT_TEXT, CONSENT_VERSION } from "@/lib/signup-contract";
+
 import { useState } from "react";
 import { Mail, User, ArrowRight, Check, Loader2 } from "lucide-react";
 
@@ -14,6 +16,7 @@ export default function NewsletterSignup({ showNameFields = true, compact = fals
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
+  const [consent, setConsent] = useState(false);
 
   const resetStatus = () => {
     if (status !== "idle") setStatus("idle");
@@ -22,7 +25,7 @@ export default function NewsletterSignup({ showNameFields = true, compact = fals
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!email) return;
+    if (!email || !consent || status === "loading") return;
     
     setStatus("loading");
     
@@ -31,7 +34,7 @@ export default function NewsletterSignup({ showNameFields = true, compact = fals
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ 
-          email,
+          email, consent, consentVersion: CONSENT_VERSION,
           firstName: firstName || undefined,
           lastName: lastName || undefined,
         }),
@@ -39,9 +42,10 @@ export default function NewsletterSignup({ showNameFields = true, compact = fals
       
       const data = await res.json();
       
-      if (res.ok) {
-        setStatus("success");
-        setMessage("You're on the list!");
+      if (res.ok && data.recorded === true && typeof data.subscribed === "boolean") {
+        setStatus(data.subscribed ? "success" : "error");
+        setMessage(data.message);
+        if (!data.subscribed) return;
         setEmail("");
         setFirstName("");
         setLastName("");
@@ -74,7 +78,7 @@ export default function NewsletterSignup({ showNameFields = true, compact = fals
                 type="text"
                 value={firstName}
                 onChange={(e) => { setFirstName(e.target.value); resetStatus(); }}
-                placeholder="First name"
+                aria-label="First name" maxLength={100} placeholder="First name"
                 className={inputClass}
                 disabled={status === "loading" || status === "success"}
               />
@@ -85,7 +89,7 @@ export default function NewsletterSignup({ showNameFields = true, compact = fals
                 type="text"
                 value={lastName}
                 onChange={(e) => { setLastName(e.target.value); resetStatus(); }}
-                placeholder="Last name"
+                aria-label="Last name" maxLength={100} placeholder="Last name"
                 className={inputClass}
                 disabled={status === "loading" || status === "success"}
               />
@@ -100,7 +104,7 @@ export default function NewsletterSignup({ showNameFields = true, compact = fals
               type="email"
               value={email}
               onChange={(e) => { setEmail(e.target.value); resetStatus(); }}
-              placeholder="Email address"
+              aria-label="Email address" maxLength={254} placeholder="Email address"
               className={inputClass}
               disabled={status === "loading" || status === "success"}
               required
@@ -108,7 +112,7 @@ export default function NewsletterSignup({ showNameFields = true, compact = fals
           </div>
           <button
             type="submit"
-            disabled={status === "loading" || status === "success" || !email}
+            disabled={status === "loading" || status === "success" || !email || !consent}
             className={buttonClass}
           >
             {status === "loading" ? (
@@ -126,10 +130,14 @@ export default function NewsletterSignup({ showNameFields = true, compact = fals
             )}
           </button>
         </div>
+        <label className="flex items-start gap-3 text-sm text-white/80 leading-5">
+          <input type="checkbox" name="consent" required checked={consent} onChange={e => setConsent(e.target.checked)} disabled={status === "loading" || status === "success"} className="mt-1 shrink-0" />
+          <span>{CONSENT_TEXT}</span>
+        </label>
       </form>
       
       {message && (
-        <p className={`mt-4 text-sm text-center ${status === "success" ? "text-green-400" : "text-red-400"}`}>
+        <p role="status" aria-live="polite" className={`mt-4 text-sm text-center ${status === "success" ? "text-green-400" : "text-red-400"}`}>
           {message}
         </p>
       )}

@@ -1,5 +1,7 @@
 "use client";
 
+import { CONSENT_TEXT, CONSENT_VERSION } from "@/lib/signup-contract";
+
 import { useState, useEffect, useCallback } from "react";
 import { X, Mail, User, ArrowRight, Check, Loader2 } from "lucide-react";
 
@@ -14,6 +16,7 @@ export default function SignupModal({ isOpen, onClose }: SignupModalProps) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
+  const [consent, setConsent] = useState(false);
 
   const handleClose = useCallback(() => {
     onClose();
@@ -48,7 +51,7 @@ export default function SignupModal({ isOpen, onClose }: SignupModalProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email) return;
+    if (!email || !consent || status === "loading") return;
     setStatus("loading");
 
     try {
@@ -56,7 +59,7 @@ export default function SignupModal({ isOpen, onClose }: SignupModalProps) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          email,
+          email, consent, consentVersion: CONSENT_VERSION,
           firstName: firstName || undefined,
           lastName: lastName || undefined,
         }),
@@ -64,9 +67,10 @@ export default function SignupModal({ isOpen, onClose }: SignupModalProps) {
 
       const data = await res.json();
 
-      if (res.ok) {
-        setStatus("success");
-        setMessage("You're on the list!");
+      if (res.ok && data.recorded === true && typeof data.subscribed === "boolean") {
+        setStatus(data.subscribed ? "success" : "error");
+        setMessage(data.message);
+        if (!data.subscribed) return;
         setEmail("");
         setFirstName("");
         setLastName("");
@@ -84,6 +88,7 @@ export default function SignupModal({ isOpen, onClose }: SignupModalProps) {
 
   return (
     <div
+      role="dialog" aria-modal="true" aria-labelledby="newsletter-title"
       className="fixed inset-0 z-50 flex items-center justify-center p-4"
       onClick={handleClose}
     >
@@ -92,7 +97,7 @@ export default function SignupModal({ isOpen, onClose }: SignupModalProps) {
 
       {/* Modal */}
       <div
-        className="relative w-full max-w-md bg-black border border-white/20 shadow-[12px_12px_0_0_#ff3b1d] p-8 md:p-10"
+        className="relative w-full max-w-md max-h-[90dvh] overflow-y-auto bg-black border border-white/20 shadow-[12px_12px_0_0_#ff3b1d] p-8 md:p-10"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -103,7 +108,7 @@ export default function SignupModal({ isOpen, onClose }: SignupModalProps) {
           <X size={24} />
         </button>
 
-        <h3 className="text-2xl font-bold uppercase tracking-[0.05em] text-white md:text-3xl">
+        <h3 id="newsletter-title" className="text-2xl font-bold uppercase tracking-[0.05em] text-white md:text-3xl">
           Stay in the loop
         </h3>
         <p className="mt-4 text-base leading-7 text-white/72">
@@ -118,7 +123,7 @@ export default function SignupModal({ isOpen, onClose }: SignupModalProps) {
                 type="text"
                 value={firstName}
                 onChange={(e) => { setFirstName(e.target.value); if (status !== "idle") setStatus("idle"); }}
-                placeholder="First name"
+                aria-label="First name" maxLength={100} placeholder="First name"
                 className="w-full pl-11 pr-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent transition-all"
                 disabled={status === "loading" || status === "success"}
               />
@@ -129,7 +134,7 @@ export default function SignupModal({ isOpen, onClose }: SignupModalProps) {
                 type="text"
                 value={lastName}
                 onChange={(e) => { setLastName(e.target.value); if (status !== "idle") setStatus("idle"); }}
-                placeholder="Last name"
+                aria-label="Last name" maxLength={100} placeholder="Last name"
                 className="w-full pl-11 pr-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent transition-all"
                 disabled={status === "loading" || status === "success"}
               />
@@ -142,16 +147,21 @@ export default function SignupModal({ isOpen, onClose }: SignupModalProps) {
               type="email"
               value={email}
               onChange={(e) => { setEmail(e.target.value); if (status !== "idle") setStatus("idle"); }}
-              placeholder="Email address"
+              aria-label="Email address" maxLength={254} placeholder="Email address"
               className="w-full pl-11 pr-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent transition-all"
               disabled={status === "loading" || status === "success"}
               required
             />
           </div>
 
+        <label className="flex items-start gap-3 text-sm text-white/80 leading-5">
+          <input type="checkbox" name="consent" required checked={consent} onChange={e => setConsent(e.target.checked)} disabled={status === "loading" || status === "success"} className="mt-1 shrink-0" />
+          <span>{CONSENT_TEXT}</span>
+        </label>
+
           <button
             type="submit"
-            disabled={status === "loading" || status === "success" || !email}
+            disabled={status === "loading" || status === "success" || !email || !consent}
             className="w-full px-6 py-4 bg-accent hover:bg-accent/90 disabled:bg-accent/50 text-white font-bold uppercase tracking-wide rounded-lg transition-all flex items-center justify-center gap-2"
           >
             {status === "loading" ? (
@@ -171,7 +181,7 @@ export default function SignupModal({ isOpen, onClose }: SignupModalProps) {
         </form>
 
         {message && (
-          <p className={`mt-4 text-sm text-center ${status === "success" ? "text-green-400" : "text-red-400"}`}>
+          <p role="status" aria-live="polite" className={`mt-4 text-sm text-center ${status === "success" ? "text-green-400" : "text-red-400"}`}>
             {message}
           </p>
         )}
