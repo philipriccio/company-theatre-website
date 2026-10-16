@@ -113,7 +113,7 @@ export default function JackpotTwinsPage() {
           </p>
           <div className="mt-8">
             <Link
-              href="https://jackpottwins.ca"
+              href="https://jackpottwins.ca" data-analytics-placement="production_hero"
               target="_blank"
               rel="noreferrer"
               className="btn-primary inline-flex items-center justify-center text-lg px-10 py-4"
@@ -200,7 +200,7 @@ export default function JackpotTwinsPage() {
                 </div>
 
                 <Link
-                  href="https://jackpottwins.ca"
+                  href="https://jackpottwins.ca" data-analytics-placement="production_details"
                   target="_blank"
                   rel="noreferrer"
                   className="btn-primary w-full justify-center mt-8"
@@ -231,7 +231,7 @@ export default function JackpotTwinsPage() {
           </p>
           <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
             <Link
-              href="https://mirvish.com/subscriptions"
+              href="https://mirvish.com/subscriptions" data-ticket-placement="production_tickets"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center bg-black hover:bg-black/85 text-white text-lg font-bold uppercase tracking-wide px-10 py-4 transition-colors"

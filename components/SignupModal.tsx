@@ -1,5 +1,6 @@
 "use client";
 
+import { gaEvent } from "@/lib/campaign-analytics";
 import { CONSENT_TEXT, CONSENT_VERSION } from "@/lib/signup-contract";
 
 import { useState, useEffect, useCallback } from "react";
@@ -71,6 +72,7 @@ export default function SignupModal({ isOpen, onClose }: SignupModalProps) {
         setStatus(data.subscribed ? "success" : "error");
         setMessage(data.message);
         if (!data.subscribed) return;
+        gaEvent("email_signup", { method: "company_theatre_modal" });
         setEmail("");
         setFirstName("");
         setLastName("");

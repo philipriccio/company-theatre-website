@@ -1,5 +1,6 @@
 "use client";
 
+import { gaEvent } from "@/lib/campaign-analytics";
 import { CONSENT_TEXT, CONSENT_VERSION } from "@/lib/signup-contract";
 
 import { useState } from "react";
@@ -46,6 +47,7 @@ export default function NewsletterSignup({ showNameFields = true, compact = fals
         setStatus(data.subscribed ? "success" : "error");
         setMessage(data.message);
         if (!data.subscribed) return;
+        gaEvent("email_signup", { method: "company_theatre_inline" });
         setEmail("");
         setFirstName("");
         setLastName("");
