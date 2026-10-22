@@ -1,7 +1,7 @@
 FROM node:22.23.4-alpine AS dependencies
 WORKDIR /app
 COPY package.json package-lock.json ./
-RUN npm ci
+RUN npm ci --no-audit --no-fund
 
 FROM node:22.23.4-alpine AS builder
 WORKDIR /app
