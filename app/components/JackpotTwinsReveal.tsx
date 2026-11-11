@@ -64,13 +64,15 @@ export function JackpotTwinsHomepageAnnouncement() {
           className="w-full h-auto"
         />
       </div>
-      <div className="flex flex-col items-center justify-center gap-4 bg-black px-6 py-7 sm:flex-row sm:gap-8 md:py-9">
+      <div className="flex flex-col items-center justify-center gap-4 bg-black px-6 py-7 sm:flex-row sm:flex-wrap sm:gap-8 md:py-9">
         <p
           className="text-2xl font-black uppercase tracking-[0.08em] text-white md:text-3xl"
           style={{ fontFamily: "Impact, 'Arial Narrow', sans-serif" }}
         >
-          Coming 2027
+          Tickets Now On Sale
         </p>
+        <p className="w-full text-center text-base text-white/85 md:text-lg">March 9–28, 2027 · CAA Theatre, Toronto</p>
+        <Link href="https://www.mirvish.com/shows/jackpot-twins" target="_blank" rel="noreferrer" data-ticket-placement="homepage_tickets" className="inline-flex items-center justify-center bg-[#E8272A] hover:bg-[#cc2224] text-white text-sm md:text-base font-bold uppercase tracking-[0.1em] px-8 py-3 md:px-10 md:py-3.5 transition-colors">Buy Tickets</Link>
         <Link
           href="/jackpot-twins"
           className="inline-flex items-center justify-center bg-[#E8272A] hover:bg-[#cc2224] text-white text-sm md:text-base font-bold uppercase tracking-[0.1em] px-8 py-3 md:px-10 md:py-3.5 transition-colors"

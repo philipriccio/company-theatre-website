@@ -5,17 +5,16 @@ import { ArrowLeft, Calendar, MapPin, Clock, Star } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import CastCreativesTabs from "@/components/CastCreativesTabs";
-import { SignupButton } from "@/components/SignupModal";
 import { CastMember, CrewMember } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Jackpot Twins | The Company Theatre",
   description:
-    "World premiere of Jackpot Twins, a new comedy by Philip Riccio. Starring Seana McKenna, Nora McLellan, Tony Nappo, Colin A Doyle, Caroline Toal. March 2027 at CAA Theatre, Toronto.",
+    "World premiere of Jackpot Twins, a new comedy by Philip Riccio. Starring Seana McKenna, Nora McLellan, Tony Nappo, Colin A Doyle, Caroline Toal. March 9–28, 2027 at CAA Theatre, Toronto. Single tickets now on sale.",
   openGraph: {
     title: "Jackpot Twins | The Company Theatre",
     description:
-      "World premiere of Jackpot Twins, a new comedy by Philip Riccio. Starring Seana McKenna, Nora McLellan, Tony Nappo, Colin A Doyle, Caroline Toal. March 2027 at CAA Theatre, Toronto.",
+      "World premiere of Jackpot Twins, a new comedy by Philip Riccio. Starring Seana McKenna, Nora McLellan, Tony Nappo, Colin A Doyle, Caroline Toal. March 9–28, 2027 at CAA Theatre, Toronto. Single tickets now on sale.",
     type: "article",
     images: [
       {
@@ -30,7 +29,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Jackpot Twins | The Company Theatre",
     description:
-      "World premiere of Jackpot Twins, a new comedy by Philip Riccio. March 2027 at CAA Theatre, Toronto.",
+      "World premiere of Jackpot Twins, a new comedy by Philip Riccio. March 9–28, 2027 at CAA Theatre, Toronto. Single tickets now on sale.",
     images: ["https://companytheatre.ca/images/jackpot-twins/title-card.png"],
   },
   alternates: {
@@ -79,7 +78,7 @@ export default function JackpotTwinsPage() {
         <div className="bg-accent">
           <div className="container-main px-6 py-3 flex items-center justify-between">
             <span className="text-white text-sm font-semibold uppercase tracking-wide">
-              Coming Soon
+              Tickets Now On Sale
             </span>
             <Link
               href="/#productions"
@@ -226,21 +225,21 @@ export default function JackpotTwinsPage() {
         <div className="container-main max-w-4xl">
           <h3 className="heading-lg">Get Your Tickets</h3>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-gray-700 md:text-lg">
-            Tickets are available now through an Off&nbsp;Mirvish Season Subscription.
-            Single tickets go on sale October 9.
+            Single tickets are now on sale. Join us March 9–28, 2027 at the CAA Theatre in Toronto.
+            Book your seats through Mirvish.
           </p>
           <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
             <Link
-              href="https://mirvish.com/subscriptions" data-ticket-placement="production_tickets"
+              href="https://www.mirvish.com/shows/jackpot-twins" data-ticket-placement="production_tickets"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center bg-black hover:bg-black/85 text-white text-lg font-bold uppercase tracking-wide px-10 py-4 transition-colors"
             >
-              Subscribe at Mirvish.com
+              Buy Tickets at Mirvish.com
             </Link>
-            <SignupButton className="inline-flex items-center justify-center bg-[#E8272A] hover:bg-[#cc2224] text-white text-lg font-bold uppercase tracking-wide px-10 py-4 transition-colors">
-              Single Ticket Notification
-            </SignupButton>
+            <Link href="https://jackpottwins.ca" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center border-2 border-black text-black hover:bg-black/5 text-lg font-bold uppercase tracking-wide px-10 py-4 transition-colors">
+              Explore Jackpot Twins
+            </Link>
           </div>
         </div>
       </section>
