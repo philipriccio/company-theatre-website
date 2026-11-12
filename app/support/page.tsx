@@ -7,8 +7,6 @@ import Navigation from "@/components/Navigation";
 
 const zeffyForm =
   "https://www.zeffy.com/donation-form/donate-to-the-company-theatre";
-const legacyFundProfile =
-  "https://www.canadahelps.org/en/charities/the-company-theatre/";
 
 export const metadata: Metadata = {
   title: "Support The Company Theatre",
@@ -82,25 +80,6 @@ export default function SupportPage() {
             </Link>
           </div>
 
-          <div className="mx-auto mt-12 max-w-2xl border-t border-gray-300 pt-8 text-center">
-            <h3 className="mb-4 text-xl font-bold text-gray-900">
-              Diane Mugford and Carl Steiss Legacy Fund
-            </h3>
-            <p className="body-md mb-4 text-gray-600">
-              To direct your gift to the Legacy Fund, please use CanadaHelps
-              and select “Diane Mugford and Carl Steiss Legacy Fund” on the form.
-            </p>
-            <a
-              href={legacyFundProfile}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-analytics-placement="support_legacy_fund"
-              className="inline-flex items-center gap-2 font-bold text-gray-900 underline underline-offset-4"
-            >
-              Give to the Legacy Fund on CanadaHelps
-              <ExternalLink aria-hidden="true" size={16} />
-            </a>
-          </div>
         </div>
       </section>
 
