@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ExternalLink, Heart } from "lucide-react";
-import CanadaHelpsEmbed from "@/components/CanadaHelpsEmbed";
+import ZeffyEmbed from "@/components/ZeffyEmbed";
 import Footer from "@/components/Footer";
 import Navigation from "@/components/Navigation";
 
-const canadaHelpsProfile =
+const zeffyForm =
+  "https://www.zeffy.com/donation-form/donate-to-the-company-theatre";
+const legacyFundProfile =
   "https://www.canadahelps.org/en/charities/the-company-theatre/";
 
 export const metadata: Metadata = {
   title: "Support The Company Theatre",
   description:
-    "Support The Company Theatre with a secure one-time or monthly donation through CanadaHelps.",
+    "Support The Company Theatre with a secure one-time or monthly donation through Zeffy.",
   alternates: {
     canonical: "https://companytheatre.ca/support",
   },
@@ -49,17 +51,17 @@ export default function SupportPage() {
             <p className="body-sm mb-3 font-bold text-accent">Donate securely</p>
             <h2 className="heading-lg mb-5">Make a donation</h2>
             <p className="body-md mx-auto max-w-2xl text-gray-600">
-              Choose a one-time or monthly gift below. CanadaHelps securely
-              processes your donation and issues your charitable tax receipt.
+              Choose a one-time or monthly gift below through Zeffy to support
+              The Company Theatre.
             </p>
           </div>
 
           <div className="mx-auto max-w-3xl bg-white p-4 shadow-sm sm:p-8 md:p-10">
-            <CanadaHelpsEmbed />
+            <ZeffyEmbed />
             <noscript>
               <p className="body-md text-center text-gray-700">
                 JavaScript is required to display the donation form. Please use
-                the CanadaHelps link below instead.
+                the Zeffy link below instead.
               </p>
             </noscript>
           </div>
@@ -69,14 +71,35 @@ export default function SupportPage() {
               Having trouble with the form?
             </p>
             <Link
-              href={canadaHelpsProfile}
+              href={zeffyForm}
+              data-analytics-placement="support_zeffy"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary"
             >
-              Donate on CanadaHelps
+              Donate on Zeffy
               <ExternalLink aria-hidden="true" size={16} />
             </Link>
+          </div>
+
+          <div className="mx-auto mt-12 max-w-2xl border-t border-gray-300 pt-8 text-center">
+            <h3 className="mb-4 text-xl font-bold text-gray-900">
+              Diane Mugford and Carl Steiss Legacy Fund
+            </h3>
+            <p className="body-md mb-4 text-gray-600">
+              To direct your gift to the Legacy Fund, please use CanadaHelps
+              and select “Diane Mugford and Carl Steiss Legacy Fund” on the form.
+            </p>
+            <a
+              href={legacyFundProfile}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-analytics-placement="support_legacy_fund"
+              className="inline-flex items-center gap-2 font-bold text-gray-900 underline underline-offset-4"
+            >
+              Give to the Legacy Fund on CanadaHelps
+              <ExternalLink aria-hidden="true" size={16} />
+            </a>
           </div>
         </div>
       </section>

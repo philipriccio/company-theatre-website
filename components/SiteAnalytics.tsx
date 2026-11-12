@@ -18,7 +18,7 @@ export default function SiteAnalytics() {
       if (url.origin === location.origin) return null; // Never campaign-tag internal links.
       const ticket = /^(www\.)?mirvish\.com$/.test(url.hostname) && (url.pathname.includes("/shows/jackpot-twins") || Boolean(anchor.dataset.ticketPlacement));
       const crossSite = own.includes(url.hostname);
-      const donation = /^(www\.)?canadahelps\.org$/.test(url.hostname);
+      const donation = /^(www\.)?(canadahelps\.org|zeffy\.com)$/.test(url.hostname);
       if (!ticket && !crossSite && !donation) return null;
       const placement = anchor.dataset.analyticsPlacement || anchor.dataset.ticketPlacement || "outbound";
       if (ticket || crossSite) anchor.href = attributedUrl(anchor.href, placement, "companytheatre.ca");
